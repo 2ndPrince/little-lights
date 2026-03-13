@@ -23,7 +23,11 @@ class AudioService {
     if (!_enabled) return;
     if (_currentBgm == assetPath) return; // already playing
     _currentBgm = assetPath;
-    await _bgmPlayer.play(AssetSource(_stripAssetPrefix(assetPath)));
+    try {
+      await _bgmPlayer.play(AssetSource(_stripAssetPrefix(assetPath)));
+    } catch (_) {
+      // Audio unavailable (e.g. placeholder file, web autoplay policy) — silent fail
+    }
   }
 
   /// Stops BGM. Optionally fades out over [fadeDuration].
@@ -50,7 +54,11 @@ class AudioService {
   /// [assetPath] is a Flutter asset path, e.g. 'assets/audio/sfx/sfx_match.mp3'
   Future<void> playSfx(String assetPath) async {
     if (!_enabled) return;
-    await _sfxPlayer.play(AssetSource(_stripAssetPrefix(assetPath)));
+    try {
+      await _sfxPlayer.play(AssetSource(_stripAssetPrefix(assetPath)));
+    } catch (_) {
+      // Audio unavailable — silent fail
+    }
   }
 
   /// Enables or disables all audio. Stops BGM immediately if disabling.

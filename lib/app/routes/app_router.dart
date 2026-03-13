@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../features/settings/settings_screen.dart';
+import '../../constants/asset_paths.dart';
+import '../../features/cutscene/cutscene_screen.dart';
 import '../../features/home/home_screen.dart';
-import '../../features/stories/story_selection_screen.dart';
-
+import '../../features/noah/noah_game_screen.dart';
 import '../../features/noah/noah_story_intro_screen.dart';
+import '../../features/rewards/reward_screen.dart';
+import '../../features/settings/settings_screen.dart';
+import '../../features/stories/story_selection_screen.dart';
 
 /// All app route paths as constants.
 abstract final class AppRoutes {
@@ -36,15 +39,24 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoutes.noahGame,
-      builder: (context, state) => const _StubScreen(title: 'Noah Game'),
+      builder: (context, state) => const NoahGameScreen(),
     ),
     GoRoute(
       path: AppRoutes.noahCutscene,
-      builder: (context, state) => const _StubScreen(title: 'Noah Cutscene'),
+      builder: (context, state) => CutsceneScreen(
+        framePaths: AssetPaths.noahCutsceneFrames,
+        nextRoute: AppRoutes.noahReward,
+      ),
     ),
     GoRoute(
       path: AppRoutes.noahReward,
-      builder: (context, state) => const _StubScreen(title: 'Noah Reward'),
+      builder: (context, state) => RewardScreen(
+        stars: 1,
+        badgeAssetPath: AssetPaths.noahBadge,
+        storyTitle: "Noah's Ark",
+        replayRoute: AppRoutes.noahIntro,
+        doneRoute: AppRoutes.stories,
+      ),
     ),
     GoRoute(
       path: AppRoutes.settings,

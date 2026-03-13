@@ -25,19 +25,11 @@ class BaseGameScreen extends StatefulWidget {
 
 class _BaseGameScreenState extends State<BaseGameScreen> {
   late final FlameGame _game;
-  bool _loaded = false;
 
   @override
   void initState() {
     super.initState();
     _game = widget.gameFactory();
-    _game.onGameResize(Vector2.zero()); // pre-init so onLoad can be awaited
-    _initGame();
-  }
-
-  Future<void> _initGame() async {
-    await _game.onLoad();
-    if (mounted) setState(() => _loaded = true);
   }
 
   @override
@@ -50,13 +42,14 @@ class _BaseGameScreenState extends State<BaseGameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: _loaded
-          ? GameWidget(game: _game)
-          : const Center(
-              child: CircularProgressIndicator(
-                color: Color(0xFFF4A261), // AppColors.accentOrange
-              ),
-            ),
+      body: GameWidget(
+        game: _game,
+        loadingBuilder: (context) => const Center(
+          child: CircularProgressIndicator(
+            color: Color(0xFFF4A261),
+          ),
+        ),
+      ),
     );
   }
 }
