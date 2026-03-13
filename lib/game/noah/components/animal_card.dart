@@ -7,8 +7,8 @@ import '../models/animal_pair.dart';
 
 /// Tappable card component representing a single animal in the Noah matching game.
 ///
-/// Renders as a placeholder rectangle with the animal name until real sprites
-/// are available. Calls [onTap] when tapped and exposes [select], [deselect],
+/// Renders the animal sprite image on a warm card background.
+/// Calls [onTap] when tapped and exposes [select], [deselect],
 /// [triggerMatchFeedback], and [triggerWrongFeedback] for [NoahGame] to drive.
 class AnimalCard extends PositionComponent with TapCallbacks {
   /// The data model backing this card.
@@ -45,7 +45,7 @@ class AnimalCard extends PositionComponent with TapCallbacks {
     );
     add(_bg);
 
-    // Rounded border overlay
+    // Border overlay
     add(
       RectangleComponent(
         size: size,
@@ -57,18 +57,14 @@ class AnimalCard extends PositionComponent with TapCallbacks {
       ),
     );
 
+    // Animal sprite — fills the card with padding
+    final sprite = await Sprite.load(data.flamePath);
+    final padding = size.x * 0.1;
     add(
-      TextComponent(
-        text: data.displayName,
-        textRenderer: TextPaint(
-          style: const TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF4A3728),
-          ),
-        ),
-        anchor: Anchor.center,
-        position: size / 2,
+      SpriteComponent(
+        sprite: sprite,
+        position: Vector2(padding, padding),
+        size: size - Vector2(padding * 2, padding * 2),
       ),
     );
   }

@@ -7,8 +7,8 @@ import '../models/stone.dart';
 
 /// Tappable stone component in the David and Goliath mini-game.
 ///
-/// Renders as a rounded rectangle placeholder until real sprites are available.
-/// Calls [onTap] when tapped. Can only be tapped once — becomes inert after collection.
+/// Renders the stone sprite image. Calls [onTap] when tapped.
+/// Can only be tapped once — becomes inert after collection.
 class StoneComponent extends PositionComponent with TapCallbacks {
   /// The data model backing this stone.
   final Stone data;
@@ -20,8 +20,8 @@ class StoneComponent extends PositionComponent with TapCallbacks {
 
   late final RectangleComponent _bg;
 
-  static const Color _colourDefault = Color(0xFFBDBDBD);
-  static const Color _colourCollected = Color(0xFF8BC34A);
+  static const Color _colourDefault = Color(0x00000000); // transparent
+  static const Color _colourCollected = Color(0x448BC34A); // faint green tint
 
   /// Creates a [StoneComponent] at [position] with [size].
   StoneComponent({
@@ -41,20 +41,9 @@ class StoneComponent extends PositionComponent with TapCallbacks {
     );
     add(_bg);
 
-    add(
-      TextComponent(
-        text: data.displayName,
-        textRenderer: TextPaint(
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF4A3728),
-          ),
-        ),
-        anchor: Anchor.center,
-        position: size / 2,
-      ),
-    );
+    // Stone sprite
+    final sprite = await Sprite.load(data.flamePath);
+    add(SpriteComponent(sprite: sprite, size: size));
   }
 
   @override
