@@ -34,14 +34,14 @@
 
 | File name | Save to | Used in | Size (px) | Description |
 |---|---|---|---|---|
-| `logo.png` | `assets/images/ui/logo.png` | HomeScreen — center | 400 × 200 | App logo "LittleLights" — warm sun or glowing lantern motif, soft rounded lettering |
-| `bg_home.png` | `assets/images/ui/bg_home.png` | HomeScreen — full background | 1080 × 1920 | Soft pastel outdoor scene — rolling hills, soft clouds, warm sky. No characters. |
-| `btn_play.png` | `assets/images/ui/btn_play.png` | HomeScreen — Play button, also used as placeholder thumbnail for locked stories | 320 × 160 | Large rounded orange button with a play triangle icon |
-| `btn_back.png` | `assets/images/ui/btn_back.png` | All screens — back navigation | 80 × 80 | Simple left-arrow icon, white on transparent, rounded |
-| `btn_settings.png` | `assets/images/ui/btn_settings.png` | HomeScreen — gear/settings icon | 80 × 80 | Soft gear or cog icon, warm brown on transparent |
-| `btn_replay.png` | `assets/images/ui/btn_replay.png` | RewardScreen — Play Again button | 80 × 80 | Circular replay arrow icon, orange on transparent |
-| `star_reward.png` | `assets/images/ui/star_reward.png` | RewardScreen — earned star (×1–3) | 144 × 144 | Gold filled star, soft glow, rounded points |
-| `star_empty.png` | `assets/images/ui/star_empty.png` | RewardScreen — unearned star slot | 144 × 144 | Same star outline, grey/muted, no glow |
+| `logo.png` | `assets/images/ui/logo.png` | HomeScreen — center | 400 × 200 | **100 KB** | App logo "LittleLights" — warm sun or glowing lantern motif, soft rounded lettering |
+| `bg_home.png` | `assets/images/ui/bg_home.png` | HomeScreen — full background | 1080 × 1920 | **500 KB** | Soft pastel outdoor scene — rolling hills, soft clouds, warm sky. No characters. |
+| `btn_play.png` | `assets/images/ui/btn_play.png` | HomeScreen — Play button, also used as placeholder thumbnail for locked stories | 320 × 160 | **100 KB** | Large rounded orange button with a play triangle icon |
+| `btn_back.png` | `assets/images/ui/btn_back.png` | All screens — back navigation | 80 × 80 | **30 KB** | Simple left-arrow icon, white on transparent, rounded |
+| `btn_settings.png` | `assets/images/ui/btn_settings.png` | HomeScreen — gear/settings icon | 80 × 80 | **30 KB** | Soft gear or cog icon, warm brown on transparent |
+| `btn_replay.png` | `assets/images/ui/btn_replay.png` | RewardScreen — Play Again button | 80 × 80 | **30 KB** | Circular replay arrow icon, orange on transparent |
+| `star_reward.png` | `assets/images/ui/star_reward.png` | RewardScreen — earned star (×1–3) | 144 × 144 | **50 KB** | Gold filled star, soft glow, rounded points |
+| `star_empty.png` | `assets/images/ui/star_empty.png` | RewardScreen — unearned star slot | 144 × 144 | **50 KB** | Same star outline, grey/muted, no glow |
 
 ---
 
@@ -52,14 +52,14 @@
 > Transparent background (PNG).
 > Each animal should be a cute full-body or head+body view facing slightly right.
 
-| File name | Save to | Animal | Notes |
-|---|---|---|---|
-| `lion_1.png` | `assets/images/stories/noah/animals/lion_1.png` | Lion (card 1 of pair) | Male lion, mane, friendly smile |
-| `lion_2.png` | `assets/images/stories/noah/animals/lion_2.png` | Lion (card 2 of pair) | Identical or slightly mirrored — must look like a matching pair |
-| `elephant_1.png` | `assets/images/stories/noah/animals/elephant_1.png` | Elephant (card 1 of pair) | Grey, big ears, upturned trunk |
-| `elephant_2.png` | `assets/images/stories/noah/animals/elephant_2.png` | Elephant (card 2 of pair) | Matching pair |
-| `giraffe_1.png` | `assets/images/stories/noah/animals/giraffe_1.png` | Giraffe (card 1 of pair) | Long neck, spots, gentle expression |
-| `giraffe_2.png` | `assets/images/stories/noah/animals/giraffe_2.png` | Giraffe (card 2 of pair) | Matching pair |
+| File name | Save to | Animal | Max file size | Notes |
+|---|---|---|---|---|
+| `lion_1.png` | `assets/images/stories/noah/animals/lion_1.png` | Lion (card 1 of pair) | **100 KB** | Male lion, mane, friendly smile |
+| `lion_2.png` | `assets/images/stories/noah/animals/lion_2.png` | Lion (card 2 of pair) | **100 KB** | Identical or slightly mirrored — must look like a matching pair |
+| `elephant_1.png` | `assets/images/stories/noah/animals/elephant_1.png` | Elephant (card 1 of pair) | **100 KB** | Grey, big ears, upturned trunk |
+| `elephant_2.png` | `assets/images/stories/noah/animals/elephant_2.png` | Elephant (card 2 of pair) | **100 KB** | Matching pair |
+| `giraffe_1.png` | `assets/images/stories/noah/animals/giraffe_1.png` | Giraffe (card 1 of pair) | **100 KB** | Long neck, spots, gentle expression |
+| `giraffe_2.png` | `assets/images/stories/noah/animals/giraffe_2.png` | Giraffe (card 2 of pair) | **100 KB** | Matching pair |
 
 ---
 
@@ -77,14 +77,14 @@
 
 ## 4. Noah's Ark — UI & Characters
 
-| File name | Save to | Used in | Size (px) | Description |
-|---|---|---|---|---|
-| `ark.png` | `assets/images/stories/noah/ui/ark.png` | Story selection card thumbnail + Flame game ark zone | 560 × 360 | Wooden ark on water, rounded hull, brown tones, friendly proportions. Transparent background. |
-| `ark_open.png` | `assets/images/stories/noah/ui/ark_open.png` | Flame game — ark door open state (when pair is loaded) | 560 × 360 | Same ark with door/ramp visibly open |
-| `noah_character.png` | `assets/images/stories/noah/ui/noah_character.png` | Flame game — Noah standing near ark | 200 × 300 | Friendly bearded man in simple robes, smiling, arms open. Transparent background. |
-| `noah_happy.png` | `assets/images/stories/noah/ui/noah_happy.png` | Flame game — Noah celebration pose | 200 × 300 | Same Noah character, arms raised in celebration |
-| `card_bg.png` | `assets/images/stories/noah/ui/card_bg.png` | Animal card background texture | 200 × 200 | Soft wooden or parchment texture tile — warm beige tones |
-| `badge_noah.png` | `assets/images/stories/noah/ui/badge_noah.png` | RewardScreen — Noah completion badge | 320 × 320 | Circular badge. Ark icon in center, golden border, "Ark Builder" label optional. Transparent background. |
+| File name | Save to | Used in | Size (px) | Max file size | Description |
+|---|---|---|---|---|---|
+| `ark.png` | `assets/images/stories/noah/ui/ark.png` | Story selection card thumbnail + Flame game ark zone | 560 × 360 | **150 KB** | Wooden ark on water, rounded hull, brown tones, friendly proportions. Transparent background. |
+| `ark_open.png` | `assets/images/stories/noah/ui/ark_open.png` | Flame game — ark door open state (when pair is loaded) | 560 × 360 | **150 KB** | Same ark with door/ramp visibly open |
+| `noah_character.png` | `assets/images/stories/noah/ui/noah_character.png` | Flame game — Noah standing near ark | 200 × 300 | **100 KB** | Friendly bearded man in simple robes, smiling, arms open. Transparent background. |
+| `noah_happy.png` | `assets/images/stories/noah/ui/noah_happy.png` | Flame game — Noah celebration pose | 200 × 300 | **100 KB** | Same Noah character, arms raised in celebration |
+| `card_bg.png` | `assets/images/stories/noah/ui/card_bg.png` | Animal card background texture | 200 × 200 | **80 KB** | Soft wooden or parchment texture tile — warm beige tones |
+| `badge_noah.png` | `assets/images/stories/noah/ui/badge_noah.png` | RewardScreen — Noah completion badge | 320 × 320 | **100 KB** | Circular badge. Ark icon in center, golden border, "Ark Builder" label optional. Transparent background. |
 
 ---
 
@@ -94,12 +94,12 @@
 > Export at **1080 × 1920 px** portrait. No transparency needed.
 > Together they tell a 4-frame mini-story. Each frame should flow naturally into the next.
 
-| File name | Save to | Frame # | Scene description |
-|---|---|---|---|
-| `scene_01.png` | `assets/images/stories/noah/cutscene/scene_01.png` | Frame 1 | Noah stands outside the ark, animals lined up behind him. Sky is sunny and bright. |
-| `scene_02.png` | `assets/images/stories/noah/cutscene/scene_02.png` | Frame 2 | Animals walking up the ramp into the ark — lion, elephant, giraffe visible. |
-| `scene_03.png` | `assets/images/stories/noah/cutscene/scene_03.png` | Frame 3 | Dark clouds gather, rain begins to fall. Noah is inside the ark, door closing. |
-| `scene_04.png` | `assets/images/stories/noah/cutscene/scene_04.png` | Frame 4 | Ark floating on calm water. Rainbow in the sky. Noah waves from a window. Happy ending. |
+| File name | Save to | Frame # | Max file size | Scene description |
+|---|---|---|---|---|
+| `scene_01.png` | `assets/images/stories/noah/cutscene/scene_01.png` | Frame 1 | **500 KB** | Noah stands outside the ark, animals lined up behind him. Sky is sunny and bright. |
+| `scene_02.png` | `assets/images/stories/noah/cutscene/scene_02.png` | Frame 2 | **500 KB** | Animals walking up the ramp into the ark — lion, elephant, giraffe visible. |
+| `scene_03.png` | `assets/images/stories/noah/cutscene/scene_03.png` | Frame 3 | **500 KB** | Dark clouds gather, rain begins to fall. Noah is inside the ark, door closing. |
+| `scene_04.png` | `assets/images/stories/noah/cutscene/scene_04.png` | Frame 4 | **500 KB** | Ark floating on calm water. Rainbow in the sky. Noah waves from a window. Happy ending. |
 
 ---
 
@@ -127,12 +127,12 @@
 
 ## 8. David and Goliath — UI
 
-| File name | Save to | Used in | Size (px) | Description |
-|---|---|---|---|
-| `stone_1.png` | `assets/images/stories/david/ui/stone_1.png` | Flame game — tappable stone #1 | 160 × 160 | Smooth rounded river pebble, grey-brown tones. Friendly. Transparent background. |
-| `stone_2.png` | `assets/images/stories/david/ui/stone_2.png` | Flame game — tappable stone #2 | 160 × 160 | Same as stone_1 — slight shape variation OK |
-| `stone_3.png` | `assets/images/stories/david/ui/stone_3.png` | Flame game — tappable stone #3 | 160 × 160 | Same as stone_1 — slight shape variation OK |
-| `badge_david.png` | `assets/images/stories/david/ui/badge_david.png` | RewardScreen — David completion badge | 320 × 320 | Circular badge. Sling or star icon in center, golden border. "Brave Heart" label optional. Transparent background. |
+| File name | Save to | Used in | Size (px) | Max file size | Description |
+|---|---|---|---|---|---|
+| `stone_1.png` | `assets/images/stories/david/ui/stone_1.png` | Flame game — tappable stone #1 | 160 × 160 | **80 KB** | Smooth rounded river pebble, grey-brown tones. Friendly. Transparent background. |
+| `stone_2.png` | `assets/images/stories/david/ui/stone_2.png` | Flame game — tappable stone #2 | 160 × 160 | **80 KB** | Same as stone_1 — slight shape variation OK |
+| `stone_3.png` | `assets/images/stories/david/ui/stone_3.png` | Flame game — tappable stone #3 | 160 × 160 | **80 KB** | Same as stone_1 — slight shape variation OK |
+| `badge_david.png` | `assets/images/stories/david/ui/badge_david.png` | RewardScreen — David completion badge | 320 × 320 | **100 KB** | Circular badge. Sling or star icon in center, golden border. "Brave Heart" label optional. Transparent background. |
 
 ---
 
@@ -140,12 +140,12 @@
 
 > Full-screen story frames shown after the mini-game. Export at **1080 × 1920 px** portrait. No transparency.
 
-| File name | Save to | Frame # | Scene description |
-|---|---|---|---|
-| `scene_01.png` | `assets/images/stories/david/cutscene/scene_01.png` | Frame 1 | David stands by the river, picking up stones. Goliath visible in the distance on a hill. |
-| `scene_02.png` | `assets/images/stories/david/cutscene/scene_02.png` | Frame 2 | David swings his sling. Brave expression. Bright sunny sky behind him. |
-| `scene_03.png` | `assets/images/stories/david/cutscene/scene_03.png` | Frame 3 | Goliath tumbles backwards — cartoonish, not violent. Big swirly eyes. |
-| `scene_04.png` | `assets/images/stories/david/cutscene/scene_04.png` | Frame 4 | David and the people celebrate. Rainbow or sunshine. Joyful, peaceful ending. |
+| File name | Save to | Frame # | Max file size | Scene description |
+|---|---|---|---|---|
+| `scene_01.png` | `assets/images/stories/david/cutscene/scene_01.png` | Frame 1 | **500 KB** | David stands by the river, picking up stones. Goliath visible in the distance on a hill. |
+| `scene_02.png` | `assets/images/stories/david/cutscene/scene_02.png` | Frame 2 | **500 KB** | David swings his sling. Brave expression. Bright sunny sky behind him. |
+| `scene_03.png` | `assets/images/stories/david/cutscene/scene_03.png` | Frame 3 | **500 KB** | Goliath tumbles backwards — cartoonish, not violent. Big swirly eyes. |
+| `scene_04.png` | `assets/images/stories/david/cutscene/scene_04.png` | Frame 4 | **500 KB** | David and the people celebrate. Rainbow or sunshine. Joyful, peaceful ending. |
 
 ---
 
@@ -159,25 +159,25 @@
 
 ## 11. Audio — Background Music
 
-| File name | Save to | Used in | Duration | Description |
-|---|---|---|---|---|
-| `bgm_home.mp3` | `assets/audio/music/bgm_home.mp3` | HomeScreen (loops while on screen) | 60–90 sec loop | Gentle, warm, welcoming. Soft piano or acoustic guitar with light percussion. Child-friendly. Seamless loop. |
-| `bgm_noah.mp3` | `assets/audio/music/bgm_noah.mp3` | Noah mini-game (loops during gameplay) | 60–90 sec loop | Playful and adventurous but calm. Animal-themed if possible (marimba, light woodwinds). Seamless loop. |
-| `bgm_david.mp3` | `assets/audio/music/bgm_david.mp3` | David mini-game (loops during gameplay) | 60–90 sec loop | Brave and hopeful but gentle. Soft drums, simple melody, not dramatic. Seamless loop. |
+| File name | Save to | Used in | Duration | Max file size | Description |
+|---|---|---|---|---|---|
+| `bgm_home.mp3` | `assets/audio/music/bgm_home.mp3` | HomeScreen (loops while on screen) | 60–90 sec loop | **2 MB** | Gentle, warm, welcoming. Soft piano or acoustic guitar with light percussion. Child-friendly. Seamless loop. |
+| `bgm_noah.mp3` | `assets/audio/music/bgm_noah.mp3` | Noah mini-game (loops during gameplay) | 60–90 sec loop | **2 MB** | Playful and adventurous but calm. Animal-themed if possible (marimba, light woodwinds). Seamless loop. |
+| `bgm_david.mp3` | `assets/audio/music/bgm_david.mp3` | David mini-game (loops during gameplay) | 60–90 sec loop | **2 MB** | Brave and hopeful but gentle. Soft drums, simple melody, not dramatic. Seamless loop. |
 
 ---
 
 ## 12. Audio — Sound Effects
 
-| File name | Save to | Triggered when | Duration | Description |
-|---|---|---|---|---|
-| `sfx_tap.mp3` | `assets/audio/sfx/sfx_tap.mp3` | Child taps an animal card (selects it) | < 0.3 sec | Soft, light tap sound — like a gentle xylophone note or wood block |
-| `sfx_match.mp3` | `assets/audio/sfx/sfx_match.mp3` | Two matching animal cards are paired correctly | < 0.5 sec | Cheerful ascending two-note chime — happy, bright |
-| `sfx_incorrect.mp3` | `assets/audio/sfx/sfx_incorrect.mp3` | Two non-matching cards are tapped | < 0.5 sec | Soft, gentle "womp" or low note — NOT harsh or scary. Should feel like "try again" not "you failed" |
-| `sfx_load_ark.mp3` | `assets/audio/sfx/sfx_load_ark.mp3` | Matched pair is loaded into the ark | < 0.7 sec | Satisfying wooden thud or door-closing sound — warm, solid |
-| `sfx_success.mp3` | `assets/audio/sfx/sfx_success.mp3` | All pairs matched — game complete | 1.5–2 sec | Full celebration jingle — ascending notes, triumphant but gentle. Not too loud. |
-| `sfx_star.mp3` | `assets/audio/sfx/sfx_star.mp3` | Star animates in on RewardScreen | < 0.5 sec | Single bright sparkle/twinkle sound |
-| `sfx_badge.mp3` | `assets/audio/sfx/sfx_badge.mp3` | Badge slides in on RewardScreen | < 0.7 sec | Soft "reveal" shimmer sound — like a gentle fanfare hit |
+| File name | Save to | Triggered when | Duration | Max file size | Description |
+|---|---|---|---|---|---|
+| `sfx_tap.mp3` | `assets/audio/sfx/sfx_tap.mp3` | Child taps an animal card (selects it) | < 0.3 sec | **30 KB** | Soft, light tap sound — like a gentle xylophone note or wood block |
+| `sfx_match.mp3` | `assets/audio/sfx/sfx_match.mp3` | Two matching animal cards are paired correctly | < 0.5 sec | **50 KB** | Cheerful ascending two-note chime — happy, bright |
+| `sfx_incorrect.mp3` | `assets/audio/sfx/sfx_incorrect.mp3` | Two non-matching cards are tapped | < 0.5 sec | **50 KB** | Soft, gentle "womp" or low note — NOT harsh or scary. Should feel like "try again" not "you failed" |
+| `sfx_load_ark.mp3` | `assets/audio/sfx/sfx_load_ark.mp3` | Matched pair is loaded into the ark | < 0.7 sec | **70 KB** | Satisfying wooden thud or door-closing sound — warm, solid |
+| `sfx_success.mp3` | `assets/audio/sfx/sfx_success.mp3` | All pairs matched — game complete | 1.5–2 sec | **100 KB** | Full celebration jingle — ascending notes, triumphant but gentle. Not too loud. |
+| `sfx_star.mp3` | `assets/audio/sfx/sfx_star.mp3` | Star animates in on RewardScreen | < 0.5 sec | **50 KB** | Single bright sparkle/twinkle sound |
+| `sfx_badge.mp3` | `assets/audio/sfx/sfx_badge.mp3` | Badge slides in on RewardScreen | < 0.7 sec | **70 KB** | Soft "reveal" shimmer sound — like a gentle fanfare hit |
 
 ---
 
@@ -201,7 +201,29 @@
 
 ---
 
-## How to Replace an Asset
+## Asset Technical Specifications
+
+| Asset type | Format | Dimensions | Max file size |
+|---|---|---|---|
+| Full-screen backgrounds | PNG, no transparency | 1080 × 1920 px | 500 KB |
+| Cutscene frames | PNG, no transparency | 1080 × 1920 px | 500 KB |
+| Characters (tall) | PNG, transparent bg | 200 × 300 px | 100 KB |
+| Game objects / characters | PNG, transparent bg | 200 × 200 px | 100 KB |
+| Stones / small objects | PNG, transparent bg | 160 × 160 px | 80 KB |
+| UI buttons (wide) | PNG, transparent bg | 320 × 160 px | 100 KB |
+| UI icons (square) | PNG, transparent bg | 80 × 80 px | 30 KB |
+| Stars / badges | PNG, transparent bg | 320 × 320 px | 100 KB |
+| App logo | PNG, transparent bg | 400 × 200 px | 100 KB |
+| BGM tracks | MP3, 128 kbps, stereo, 44.1 kHz | — | 2 MB |
+| SFX clips | MP3, 128 kbps, stereo, 44.1 kHz | — | 100 KB |
+
+> **Why these limits matter:** Flutter loads all assets into memory. Oversized images cause slow startup, high RAM usage, and crashes on low-end Android devices.
+>
+> **If your PNG exceeds the limit:** Export from your tool at the exact pixel dimensions above — do not just rename a JPEG as .png. File size follows naturally from correct dimensions.
+>
+> **Color space:** RGB for backgrounds, RGBA for anything with transparency. Never CMYK.
+>
+> **Never rename a JPEG to .png.** The app agent will detect and reject it.
 
 1. Generate or obtain the asset matching the spec above
 2. Save it to the exact file path shown in the table
