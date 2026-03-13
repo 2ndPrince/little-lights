@@ -50,27 +50,32 @@ These rules apply to every file in this project. Follow them strictly.
 
 | Tool | Purpose |
 |---|---|
-| `flutter analyze` | Static analysis — run before every commit, fix all warnings in scope |
+| `dart mcp-server` | **Primary** — use before coding to inspect structure, symbols, analysis issues, runtime state |
+| `flutter analyze` | Static analysis — run after every major step; fix all in-scope warnings before moving on |
 | `flutter test` | Unit + widget tests — must stay green; run after every change |
-| Dart MCP server | Code intelligence — use to inspect structure and symbols before editing |
 | Widget tests | All new widgets need at least a smoke test |
+
+**MCP config:** `.mcp.json` in project root — `dart mcp-server` (Dart SDK 3.9+).
 
 ---
 
 ## Agent Rules (apply to every implementation task)
 
-### Before writing any code
-1. **Inspect project structure via MCP** — understand what already exists
+### Before writing any code — use MCP first
+1. **Inspect project structure via MCP** — resolve symbols, check existing patterns, read pubspec
 2. **Identify the existing architecture pattern** for the area you are touching
-3. **Follow the same state management approach** — Riverpod providers, not setState in feature screens
+3. **Follow the same state management approach** — Riverpod providers, not `setState` in feature screens
 4. **Follow the same widget composition style** — extract private `_SubWidget` classes, keep `build()` under 50 lines
 5. **Do not introduce new architecture patterns** — if unsure, match the closest existing file
+6. **Search pub.dev via MCP** before adding any new package
 
-### Before finishing any task
-- Run `flutter analyze` — fix all warnings that are in scope (not pre-existing deprecations)
-- Run `flutter test` — all tests must pass
-- Check for unnecessary widget rebuilds — use `const` constructors and avoid rebuilding parent widgets when only a child needs to update
-- Check null safety — no `!` force-unwraps without a guard, no `dynamic` types
+### After each major step — gate before continuing
+- Run analysis via MCP (or `flutter analyze`) — fix all in-scope warnings before proceeding
+- Check for **Flutter lifecycle issues**: no `BuildContext` use after `await` without `mounted` guard; no `initState` async calls without `mounted` check
+- Check for **async/context misuse**: `Navigator`/`go_router` calls after `await` must check `if (!mounted) return;`
+- Check for **widget rebuild performance**: `const` constructors used where possible; `ConsumerWidget` only watches what it needs
+- Check **null safety**: no `!` force-unwraps without a null guard, no `dynamic` types
+- Run `flutter test` — all tests must pass before finishing
 
 ---
 
