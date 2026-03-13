@@ -1,12 +1,11 @@
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
 import 'package:flame/events.dart';
-import 'package:flutter/material.dart';
 
 /// The ark area where matched animal pairs are loaded.
 ///
-/// Renders as a placeholder rectangle until real art is available.
-/// Fires [onPairLoaded] when a pair is successfully dropped into it.
+/// Renders the ark sprite. Fires [onPairLoaded] when a pair is
+/// successfully dropped into it.
 class ArkDropZone extends PositionComponent with TapCallbacks {
   /// Called when a matched pair is successfully loaded into the ark.
   final void Function(String pairId) onPairLoaded;
@@ -26,28 +25,8 @@ class ArkDropZone extends PositionComponent with TapCallbacks {
   @override
   Future<void> onLoad() async {
     await super.onLoad();
-    // Placeholder: brown rectangle representing the ark
-    add(
-      RectangleComponent(
-        size: size,
-        paint: Paint()..color = const Color(0xFF8B6347),
-      ),
-    );
-    // Label
-    add(
-      TextComponent(
-        text: 'ARK',
-        textRenderer: TextPaint(
-          style: const TextStyle(
-            fontSize: 24,
-            color: Color(0xFFFFFFFF),
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        anchor: Anchor.center,
-        position: size / 2,
-      ),
-    );
+    final sprite = await Sprite.load('stories/noah/ui/ark.png');
+    add(SpriteComponent(sprite: sprite, size: size));
   }
 
   /// Called by [NoahGame] when a valid pair has been matched.
@@ -59,6 +38,7 @@ class ArkDropZone extends PositionComponent with TapCallbacks {
   }
 
   /// Returns true if [worldPoint] is within the ark drop zone bounds.
+  @override
   bool containsPoint(Vector2 worldPoint) {
     final local = worldPoint - position;
     return local.x >= 0 &&
