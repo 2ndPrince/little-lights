@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../features/settings/settings_screen.dart';
+import '../../features/home/home_screen.dart';
+import '../../features/stories/story_selection_screen.dart';
+
+import '../../features/noah/noah_story_intro_screen.dart';
 
 /// All app route paths as constants.
 abstract final class AppRoutes {
@@ -19,15 +24,15 @@ final GoRouter appRouter = GoRouter(
   routes: [
     GoRoute(
       path: AppRoutes.home,
-      builder: (context, state) => const _StubScreen(title: 'Home'),
+      builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
       path: AppRoutes.stories,
-      builder: (context, state) => const _StubScreen(title: 'Story Select'),
+      builder: (context, state) => const StorySelectionScreen(),
     ),
     GoRoute(
       path: AppRoutes.noahIntro,
-      builder: (context, state) => const _StubScreen(title: 'Noah Intro'),
+      builder: (context, state) => const NoahStoryIntroScreen(),
     ),
     GoRoute(
       path: AppRoutes.noahGame,
@@ -43,7 +48,7 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoutes.settings,
-      builder: (context, state) => const _StubScreen(title: 'Settings'),
+      builder: (context, state) => const SettingsScreen(),
     ),
     GoRoute(
       path: AppRoutes.parent,
