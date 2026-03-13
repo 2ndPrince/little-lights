@@ -32,6 +32,10 @@ flutter:
     - assets/images/stories/noah/animals/
     - assets/images/stories/noah/ui/
     - assets/images/stories/noah/cutscene/
+    - assets/images/stories/david/background/
+    - assets/images/stories/david/characters/
+    - assets/images/stories/david/ui/
+    - assets/images/stories/david/cutscene/
     - assets/audio/music/
     - assets/audio/sfx/
 

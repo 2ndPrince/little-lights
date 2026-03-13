@@ -3,16 +3,20 @@
 > Hand this file to an artist or AI image/audio generator.
 > Every asset listed here is currently a placeholder (1×1 pixel PNG or silent MP3).
 > Replace each file at the exact path shown — the app will pick it up automatically.
+>
+> **Art direction:** Read `ART_DIRECTION.md` for the full visual identity guide before generating any asset.
+> The mandatory AI prompt base phrase is: *"soft children's storybook illustration, warm pastel colors, rounded shapes, gentle lighting, simple friendly character design"*
 
 ## Art Style Guide (apply to all images)
 
-- **Style:** Soft watercolor or flat cartoon — warm, gentle, child-friendly
-- **Palette:** Soft pastels — warm cream `#FFF8EC`, sky blue `#C8E6F5`, grass green `#B5D99C`, accent orange `#F4A261`
-- **Shapes:** Rounded, no sharp edges
-- **Characters:** Friendly, smiling faces — simple expressive eyes
-- **Mood:** Calm, encouraging, safe — never scary or stressful
+- **Style:** Soft Flat Storybook — hybrid of flat illustration + soft watercolor warmth
+- **Palette:** Warm cream `#FFF8EC`, sky blue `#C8E6F5`, soft green `#B5D99C`, accent orange `#F4A261`, soft brown `#C9A27C` — never pure black, never pure white
+- **Shapes:** Rounded, soft edges, no sharp corners
+- **Characters:** Large heads, simple dot/oval eyes, soft curved smile, 2–3 heads tall (storybook proportions)
+- **Mood:** Calm, encouraging, safe — if it looks exciting it is wrong; if it looks calming it is correct
 - **Target age:** 4–7 years old
 - **No text in images** (text is handled by the app)
+- **Forbidden styles:** Anime, realistic painting, 3D renders, pixel art, dark fantasy, comic book style
 
 ---
 

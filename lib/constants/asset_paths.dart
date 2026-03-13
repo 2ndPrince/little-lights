@@ -46,10 +46,31 @@ abstract final class AssetPaths {
     noahScene01, noahScene02, noahScene03, noahScene04,
   ];
 
+  // ── David — Flutter paths (full) ────────────────────────────────────────
+
+  static const String davidBgHill       = 'assets/images/stories/david/background/background_hill.png';
+  static const String davidBgSky        = 'assets/images/stories/david/background/background_sky.png';
+  static const String davidCharacter    = 'assets/images/stories/david/characters/david_character.png';
+  static const String davidGoliath      = 'assets/images/stories/david/characters/goliath_character.png';
+  static const String davidStone1       = 'assets/images/stories/david/ui/stone_1.png';
+  static const String davidStone2       = 'assets/images/stories/david/ui/stone_2.png';
+  static const String davidStone3       = 'assets/images/stories/david/ui/stone_3.png';
+  static const String davidBadge        = 'assets/images/stories/david/ui/badge_david.png';
+  static const String davidScene01      = 'assets/images/stories/david/cutscene/scene_01.png';
+  static const String davidScene02      = 'assets/images/stories/david/cutscene/scene_02.png';
+  static const String davidScene03      = 'assets/images/stories/david/cutscene/scene_03.png';
+  static const String davidScene04      = 'assets/images/stories/david/cutscene/scene_04.png';
+
+  /// Ordered list of David cutscene frames for [CutscenePlayer].
+  static const List<String> davidCutsceneFrames = [
+    davidScene01, davidScene02, davidScene03, davidScene04,
+  ];
+
   // ── Audio — Flutter paths (full) ────────────────────────────────────────
 
   static const String bgmHome        = 'assets/audio/music/bgm_home.mp3';
   static const String bgmNoah        = 'assets/audio/music/bgm_noah.mp3';
+  static const String bgmDavid       = 'assets/audio/music/bgm_david.mp3';
 
   static const String sfxTap         = 'assets/audio/sfx/sfx_tap.mp3';
   static const String sfxMatch       = 'assets/audio/sfx/sfx_match.mp3';
@@ -80,4 +101,15 @@ abstract final class AssetPaths {
   static const String flameSfxLoadArk   = 'sfx/sfx_load_ark.mp3';
   static const String flameSfxSuccess   = 'sfx/sfx_success.mp3';
   static const String flameBgmNoah      = 'music/bgm_noah.mp3';
+
+  // ── David — Flame paths (relative to assets/images/) ────────────────────
+
+  static const String flameDavidBgHill     = 'stories/david/background/background_hill.png';
+  static const String flameDavidBgSky      = 'stories/david/background/background_sky.png';
+  static const String flameDavidCharacter  = 'stories/david/characters/david_character.png';
+  static const String flameDavidGoliath    = 'stories/david/characters/goliath_character.png';
+  static const String flameDavidStone1     = 'stories/david/ui/stone_1.png';
+  static const String flameDavidStone2     = 'stories/david/ui/stone_2.png';
+  static const String flameDavidStone3     = 'stories/david/ui/stone_3.png';
+  static const String flameBgmDavid        = 'music/bgm_david.mp3';
 }

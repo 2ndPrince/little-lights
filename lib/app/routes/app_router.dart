@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../constants/asset_paths.dart';
 import '../../features/cutscene/cutscene_screen.dart';
+import '../../features/david/david_game_screen.dart';
+import '../../features/david/david_story_intro_screen.dart';
 import '../../features/home/home_screen.dart';
 import '../../features/noah/noah_game_screen.dart';
 import '../../features/noah/noah_story_intro_screen.dart';
@@ -17,6 +19,10 @@ abstract final class AppRoutes {
   static const String noahGame       = '/stories/noah/game';
   static const String noahCutscene   = '/stories/noah/cutscene';
   static const String noahReward     = '/stories/noah/reward';
+  static const String davidIntro     = '/stories/david/intro';
+  static const String davidGame      = '/stories/david/game';
+  static const String davidCutscene  = '/stories/david/cutscene';
+  static const String davidReward    = '/stories/david/reward';
   static const String settings       = '/settings';
   static const String parent         = '/parent';
 }
@@ -55,6 +61,31 @@ final GoRouter appRouter = GoRouter(
         badgeAssetPath: AssetPaths.noahBadge,
         storyTitle: "Noah's Ark",
         replayRoute: AppRoutes.noahIntro,
+        doneRoute: AppRoutes.stories,
+      ),
+    ),
+    GoRoute(
+      path: AppRoutes.davidIntro,
+      builder: (context, state) => const DavidStoryIntroScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.davidGame,
+      builder: (context, state) => const DavidGameScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.davidCutscene,
+      builder: (context, state) => CutsceneScreen(
+        framePaths: AssetPaths.davidCutsceneFrames,
+        nextRoute: AppRoutes.davidReward,
+      ),
+    ),
+    GoRoute(
+      path: AppRoutes.davidReward,
+      builder: (context, state) => RewardScreen(
+        stars: 1,
+        badgeAssetPath: AssetPaths.davidBadge,
+        storyTitle: 'David and Goliath',
+        replayRoute: AppRoutes.davidIntro,
         doneRoute: AppRoutes.stories,
       ),
     ),

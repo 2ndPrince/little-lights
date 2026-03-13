@@ -91,7 +91,7 @@ class _SoundToggleRow extends StatelessWidget {
               child: Switch(
                 value: soundEnabled,
                 onChanged: onChanged,
-                activeColor: AppColors.accentGreen,
+                activeThumbColor: AppColors.accentGreen,
                 inactiveThumbColor: AppColors.cardLocked,
                 inactiveTrackColor: AppColors.cardLocked.withValues(alpha: 0.4),
               ),

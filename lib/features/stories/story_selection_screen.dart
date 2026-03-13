@@ -16,13 +16,15 @@ import '../../widgets/story_card.dart';
 class StorySelectionScreen extends ConsumerWidget {
   const StorySelectionScreen({super.key});
 
-  /// Returns the route path for a given [StoryId]. Only Noah is available in MVP.
+  /// Returns the route path for a given [StoryId].
   String _routeFor(StoryId id) {
     switch (id) {
       case StoryId.noah:
         return AppRoutes.noahIntro;
+      case StoryId.david:
+        return AppRoutes.davidIntro;
       default:
-        return AppRoutes.noahIntro; // placeholder until future stories are built
+        return AppRoutes.stories; // locked stories do not navigate
     }
   }
 

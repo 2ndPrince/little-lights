@@ -15,7 +15,9 @@ These rules apply to every file in this project. Follow them strictly.
 | `MVP_NOAH_SPEC.md` | Before touching any Noah screen or game code |
 | `ARCHITECTURE.md` | Before creating any new file — confirms correct layer/location |
 | `GAME_DESIGN.md` | Before any UX or mechanic decision |
+| `ART_DIRECTION.md` | Before describing, speccing, or reviewing any visual/audio asset |
 | `ASSET_GUIDE.md` | Before any asset path string |
+| `ASSET_REQUIREMENTS.md` | Full asset list with file paths and technical specs |
 | `MINIGAME_TEMPLATE.md` | When creating a new mini-game module |
 
 ---

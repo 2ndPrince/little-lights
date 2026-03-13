@@ -332,7 +332,7 @@ class _UnlockedContent extends ConsumerWidget {
                     value: soundEnabled,
                     onChanged: (v) =>
                         ref.read(settingsProvider.notifier).setSoundEnabled(v),
-                    activeColor: AppColors.accentGreen,
+                    activeThumbColor: AppColors.accentGreen,
                     inactiveThumbColor: AppColors.cardLocked,
                     inactiveTrackColor:
                         AppColors.cardLocked.withValues(alpha: 0.4),

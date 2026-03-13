@@ -11,7 +11,7 @@ abstract final class AppTheme {
     scaffoldBackgroundColor: AppColors.background,
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.accentOrange,
-      background: AppColors.background,
+      surface: AppColors.background,
     ),
     fontFamily: 'RoundedFont',
     textTheme: const TextTheme(
