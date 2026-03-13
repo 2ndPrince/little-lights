@@ -36,6 +36,12 @@ enum NoahGameState {
   completed,
 }
 
+/// Key used to register and remove the intro overlay via [FlameGame.overlays].
+///
+/// Pass this to [GameWidget.overlayBuilderMap] and call [overlays.add] in [onLoad].
+// ignore: constant_identifier_names
+const String _noahIntroOverlayKey = 'noahIntro';
+
 /// Flame [FlameGame] for the Noah's Ark animal-matching mini-game.
 ///
 /// Constructs and owns a [NoahWorld] and an [AudioManager]. Drives the
@@ -45,6 +51,11 @@ enum NoahGameState {
 ///
 /// No Riverpod. No Navigator. Data enters via constructor; result exits via callback.
 class NoahGame extends FlameGame {
+  /// Overlay key for the pre-game intro screen.
+  ///
+  /// Register in [GameWidget.overlayBuilderMap] with this key.
+  static const String introOverlayKey = _noahIntroOverlayKey;
+
   /// Called exactly once when the player successfully completes the game.
   final void Function(GameResult)? onComplete;
 
@@ -74,6 +85,7 @@ class NoahGame extends FlameGame {
     _world = NoahWorld(onCardTap: _handleCardTap);
     await add(_world);
     _state = NoahGameState.playing;
+    overlays.add(introOverlayKey);
     unawaited(audioManager.playBgm(AssetPaths.flameBgmNoah));
   }
 

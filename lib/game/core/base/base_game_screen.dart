@@ -13,9 +13,15 @@ class BaseGameScreen extends StatefulWidget {
   /// Called exactly once when the game signals it is done.
   final void Function(GameResult result) onGameComplete;
 
+  /// Optional overlay builder map passed to [GameWidget.overlayBuilderMap].
+  ///
+  /// Keys must match the strings used in [FlameGame.overlays.add].
+  final Map<String, Widget Function(BuildContext, FlameGame)>? overlayBuilderMap;
+
   const BaseGameScreen({
     required this.gameFactory,
     required this.onGameComplete,
+    this.overlayBuilderMap,
     super.key,
   });
 
@@ -44,6 +50,7 @@ class _BaseGameScreenState extends State<BaseGameScreen> {
       backgroundColor: Colors.black,
       body: GameWidget(
         game: _game,
+        overlayBuilderMap: widget.overlayBuilderMap,
         loadingBuilder: (context) => const Center(
           child: CircularProgressIndicator(
             color: Color(0xFFF4A261),
