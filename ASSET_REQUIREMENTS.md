@@ -103,7 +103,53 @@
 
 ---
 
-## 6. Font
+## 6. David and Goliath — Backgrounds (Game)
+
+> Full screen Flame game canvas. Export at **1080 × 1920 px** portrait. No transparency needed.
+
+| File name | Save to | Used in | Description |
+|---|---|---|---|
+| `background_hill.png` | `assets/images/stories/david/background/background_hill.png` | David game background + intro overlay | Rolling green hillside with a river/stream at the bottom. Soft blue sky. Sunny and peaceful. |
+| `background_sky.png` | `assets/images/stories/david/background/background_sky.png` | David intro overlay fallback | Soft blue sky with gentle clouds. Same palette as Noah sky. |
+
+---
+
+## 7. David and Goliath — Characters
+
+> Transparent background (PNG).
+
+| File name | Save to | Size (px) | Description |
+|---|---|---|---|
+| `david_character.png` | `assets/images/stories/david/characters/david_character.png` | 200 × 300 | Young shepherd boy, small frame, simple tunic, sling in hand, confident soft smile. Olive skin. |
+| `goliath_character.png` | `assets/images/stories/david/characters/goliath_character.png` | 160 × 320 | Very large rounded warrior. Simple cartoonish armor. Slightly confused expression — NOT scary or threatening. Same soft style as Noah characters. |
+
+---
+
+## 8. David and Goliath — UI
+
+| File name | Save to | Used in | Size (px) | Description |
+|---|---|---|---|
+| `stone_1.png` | `assets/images/stories/david/ui/stone_1.png` | Flame game — tappable stone #1 | 160 × 160 | Smooth rounded river pebble, grey-brown tones. Friendly. Transparent background. |
+| `stone_2.png` | `assets/images/stories/david/ui/stone_2.png` | Flame game — tappable stone #2 | 160 × 160 | Same as stone_1 — slight shape variation OK |
+| `stone_3.png` | `assets/images/stories/david/ui/stone_3.png` | Flame game — tappable stone #3 | 160 × 160 | Same as stone_1 — slight shape variation OK |
+| `badge_david.png` | `assets/images/stories/david/ui/badge_david.png` | RewardScreen — David completion badge | 320 × 320 | Circular badge. Sling or star icon in center, golden border. "Brave Heart" label optional. Transparent background. |
+
+---
+
+## 9. David and Goliath — Cutscene Frames
+
+> Full-screen story frames shown after the mini-game. Export at **1080 × 1920 px** portrait. No transparency.
+
+| File name | Save to | Frame # | Scene description |
+|---|---|---|---|
+| `scene_01.png` | `assets/images/stories/david/cutscene/scene_01.png` | Frame 1 | David stands by the river, picking up stones. Goliath visible in the distance on a hill. |
+| `scene_02.png` | `assets/images/stories/david/cutscene/scene_02.png` | Frame 2 | David swings his sling. Brave expression. Bright sunny sky behind him. |
+| `scene_03.png` | `assets/images/stories/david/cutscene/scene_03.png` | Frame 3 | Goliath tumbles backwards — cartoonish, not violent. Big swirly eyes. |
+| `scene_04.png` | `assets/images/stories/david/cutscene/scene_04.png` | Frame 4 | David and the people celebrate. Rainbow or sunshine. Joyful, peaceful ending. |
+
+---
+
+## 10. Font
 
 | File name | Save to | Used in | Requirements |
 |---|---|---|---|
@@ -111,16 +157,17 @@
 
 ---
 
-## 7. Audio — Background Music
+## 11. Audio — Background Music
 
 | File name | Save to | Used in | Duration | Description |
 |---|---|---|---|---|
 | `bgm_home.mp3` | `assets/audio/music/bgm_home.mp3` | HomeScreen (loops while on screen) | 60–90 sec loop | Gentle, warm, welcoming. Soft piano or acoustic guitar with light percussion. Child-friendly. Seamless loop. |
 | `bgm_noah.mp3` | `assets/audio/music/bgm_noah.mp3` | Noah mini-game (loops during gameplay) | 60–90 sec loop | Playful and adventurous but calm. Animal-themed if possible (marimba, light woodwinds). Seamless loop. |
+| `bgm_david.mp3` | `assets/audio/music/bgm_david.mp3` | David mini-game (loops during gameplay) | 60–90 sec loop | Brave and hopeful but gentle. Soft drums, simple melody, not dramatic. Seamless loop. |
 
 ---
 
-## 8. Audio — Sound Effects
+## 12. Audio — Sound Effects
 
 | File name | Save to | Triggered when | Duration | Description |
 |---|---|---|---|---|
@@ -143,10 +190,14 @@
 | Noah backgrounds | 2 | ⚠️ All placeholders |
 | Noah UI + characters | 6 | ⚠️ All placeholders |
 | Noah cutscene frames | 4 | ⚠️ All placeholders |
+| David backgrounds | 2 | ⚠️ All placeholders |
+| David characters | 2 | ⚠️ All placeholders |
+| David UI + stones | 4 | ⚠️ All placeholders |
+| David cutscene frames | 4 | ⚠️ All placeholders |
 | Font | 1 | ⚠️ Placeholder (replace with Nunito or similar) |
-| BGM tracks | 2 | ⚠️ All silent |
+| BGM tracks | 3 | ⚠️ All silent |
 | SFX clips | 7 | ⚠️ All silent |
-| **Total** | **36** | **0 real assets** |
+| **Total** | **49** | **0 real assets** |
 
 ---
 
