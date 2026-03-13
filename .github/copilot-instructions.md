@@ -37,7 +37,7 @@ These rules apply to every file in this project. Follow them strictly.
 | UI framework | Flutter 3.x |
 | Game engine | flame ^1.x |
 | State management | flutter_riverpod ^2.x |
-| Navigation | go_router ^13.x |
+| Navigation | go_router ^14.x |
 | Local persistence | shared_preferences ^2.x |
 | Audio | audioplayers ^6.x |
 | Value equality | equatable ^2.x |

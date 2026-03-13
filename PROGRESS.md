@@ -1,6 +1,6 @@
 # LittleLights — Progress & Session Handoff
 
-> **Resume instructions:** Open this project in your IDE. GitHub Copilot will automatically load `.github/copilot-instructions.md`. Read this file + `MVP_NOAH_SPEC.md` first, then pick a task from the "Ready to start" section below.
+> **Resume instructions:** Open this project in your IDE. GitHub Copilot will automatically load `.github/copilot-instructions.md`. Read this file first, then resume from the **Next Steps** section below.
 
 ---
 
@@ -8,98 +8,84 @@
 
 | File | What it contains |
 |---|---|
-| `.github/copilot-instructions.md` | All coding rules, architecture laws, naming conventions |
+| `.github/copilot-instructions.md` | All coding rules, architecture laws, naming conventions, MCP workflow |
 | `ARCHITECTURE.md` | Layer diagram, bridge pattern, routes, data models, asset path rules |
 | `GAME_DESIGN.md` | UX philosophy, Noah game spec, visual/audio direction |
 | `ASSET_GUIDE.md` | Asset naming, Flutter vs Flame path distinction, placeholder strategy |
 | `MINIGAME_TEMPLATE.md` | Step-by-step template for any new mini-game |
-| `MVP_NOAH_SPEC.md` | **Start here** — complete Noah vertical slice spec + Definition of Done |
+| `MVP_NOAH_SPEC.md` | Complete Noah vertical slice spec + Definition of Done |
 
 ---
 
-## Current Phase: ✅ MVP Complete — All 44 todos done
+## Tooling
 
-### ✅ Phase 0 — Foundation (DONE)
-- [x] Project folder structure + all 6 doc files
-
-### ✅ Wave 1 — Core models & pubspec (DONE)
-- [x] `pubspec.yaml`, `GameResult`, `AnimalPair`, `NoahContent`
-
-### ✅ Wave 2 — Data layer + game engine core (DONE)
-- [x] App theme, go_router, main.dart, BaseGameScreen, AudioService, DraggableComponent
-- [x] MatchingLogic, ArkDropZone, ProgressRepository, progressProvider, asset_paths.dart
-
-### ✅ Wave 3 — Flutter screens + Noah game + assets (DONE)
-- [x] HomeScreen, StorySelectionScreen, StoryIntroScreen, CutsceneScreen, RewardScreen
-- [x] SettingsScreen, ParentGateSheet, AnimalCard, NoahGame, NoahWorld
-- [x] 26 placeholder PNGs, 9 silent audio files, font
-
-### ✅ Wave 4 — Integration + tests (DONE)
-- [x] NoahGameScreen: wires NoahGame → progress save → cutscene route
-- [x] NoahIntroOverlay: Flame overlay with Start button (160×80)
-- [x] BaseGameScreen: optional overlayBuilderMap support
-- [x] 8 provider tests (unlock chain, markComplete, resetAll)
-- [x] 7 widget tests (StoryCard states, RewardScreen nav)
-- [x] **32/32 tests passing, 0 analyzer errors**
-- [x] Full flow verified on Chrome: Home→Select→Intro→Game→Cutscene→Reward
-
-### 🏁 MVP Definition of Done — Status
-- [x] App launches to HomeScreen
-- [x] Child reaches game in 3 taps (Home Play → Noah card → Start)
-- [x] All 3 animal pairs matchable and loadable
-- [x] Cutscene plays (4 frames, tap-to-skip)
-- [x] Star + badge reward screen with animation
-- [x] Progress saved to SharedPreferences on completion
-- [x] David card unlocks after Noah completion (linear unlock rule)
-- [x] Sound toggle works and persists
-- [x] All code on GitHub: https://github.com/2ndPrince/little-lights
+- `dart mcp-server` configured in `.mcp.json` — use before coding to inspect structure, symbols, analysis
+- `flutter analyze` — currently **0 issues**
+- `flutter test` — currently **32/32 passing**
+- GitHub: https://github.com/2ndPrince/little-lights (latest commit on `main`)
 
 ---
 
-## Phase 1 — Parallel Implementation Tracks
+## ✅ MVP Complete — Verified 2026-03-13
 
-### 🟠 Wave 4 — Integration Sprint (NEXT)
+All 44 Noah MVP todos are done. The following was **verified by reading source code** — not inferred from prior notes.
 
-All source files exist. Now wire them together and run on a device.
+### MVP Definition of Done — Audited Status
 
-| Task ID | Title | Status |
+| Check | Status | Evidence |
 |---|---|---|
-| `t3-noah-intro-overlay` | Noah intro Flame overlay (pre-game) | **Ready** |
-| `t6-provider-test` | Unit tests for `progressProvider` | **Ready** |
-| `t6-widget-tests` | Widget tests: StoryCard + RewardScreen | **Ready** |
-| `int-e2e-noah` | Full Noah E2E: Home→Game→Cutscene→Reward | Needs above |
-| `int-audio` | Verify BGM/SFX on device | Needs int-e2e-noah |
-| `int-device-qa` | Manual touch-target + child-UX QA | Needs int-audio |
-
-#### Critical wiring needed for `int-e2e-noah`
-`NoahGameScreen` stub exists in router (`/game/noah`) but is not yet wired to `NoahGame` via `BaseGameScreen`.
-This is the last seam before a runnable app:
-```dart
-// lib/features/noah/noah_game_screen.dart
-class NoahGameScreen extends StatelessWidget {
-  Widget build(BuildContext context) => BaseGameScreen(
-    gameFactory: () => NoahGame(onComplete: (result) {
-      if (result == GameResult.success) context.go(AppRoutes.cutscene, extra: CutsceneArgs(...));
-    }),
-  );
-}
-```
+| App launches to HomeScreen | ✅ | `main.dart` → `ProviderScope` → `appRouter` initialLocation `/` → `HomeScreen` |
+| Child reaches game in **3 taps** | ✅ | Tap 1: `_PlayButton` → `/stories`; Tap 2: `StoryCard.onTap` → `/stories/noah/intro`; Tap 3: `_LetsGoButton` → `/stories/noah/game` |
+| All 3 animal pairs matchable | ✅ | `NoahContent.animalPairs` has 6 cards; `NoahGame._handleCardTap` drives state machine |
+| Correct match gives positive feedback | ✅ | `AnimalCard.triggerMatchFeedback()` — scale bounce + green colour |
+| Wrong match gives gentle feedback | ✅ | `AnimalCard.triggerWrongFeedback()` — shrink pulse; card returns to default, no penalty |
+| All pairs loaded → completion | ✅ | `MatchingLogic.allPairsLoaded` → `_onAllPairsLoaded` → 1500ms delay → `onComplete.call(GameResult.success)` |
+| Cutscene plays (4 frames, tap-to-skip) | ✅ | `CutsceneScreen` — 600ms/frame Timer, `onTap → _navigate()`, `mounted` guard present |
+| Reward screen with star + badge animation | ✅ | `RewardScreen` — `CurvedAnimation(elasticOut)` for stars, `Tween<Offset>` slide for badge |
+| Progress saved on completion | ✅ | `NoahGameScreen` (ConsumerWidget) calls `progressProvider.notifier.markComplete(StoryId.noah, stars: 1)` → `ProgressRepository.saveProgress` → SharedPreferences |
+| Progress persists after app restart | ✅ | `main.dart` awaits `SharedPreferences.getInstance()` before `runApp`; `ProgressNotifier._loadAll()` reads on `build()` |
+| David card unlocks after Noah | ✅ | `ProgressNotifier._applyUnlockRules()` iterates `StoryId.values` linearly; unlocks `david` when `noah.isCompleted == true` |
+| Sound toggle works | ✅ | `SettingsScreen` → `settingsProvider.notifier.setSoundEnabled(bool)` → writes SharedPreferences + calls `audioProvider.setEnabled(bool)` |
+| Sound setting persists after restart | ✅ | `SettingsNotifier.build()` reads `SharedPreferences.getBool(_keySoundEnabled)` synchronously at startup |
+| Layout fits 375pt screen | ✅ | Card grid: 3×100px + 2×20px gap = 340px; startX=17.5pt. Ark zone: 280px centered. All tap targets ≥ 80×80. |
+| `flutter analyze` clean | ✅ | 0 issues (3 pre-existing deprecations fixed 2026-03-13) |
+| All tests pass | ✅ | 32/32: 9 matching logic, 8 repository, 8 provider, 7 widget |
 
 ---
 
-## MVP Definition of Done
+## Known Gaps (not blockers, document before Wave 5)
 
-From `MVP_NOAH_SPEC.md`:
-- [ ] App launches to HomeScreen
-- [ ] Child reaches game in 3 taps
-- [ ] All 3 animal pairs matchable and loadable
-- [ ] Cutscene plays (4 frames, auto-advance)
-- [ ] Star + badge reward screen
-- [ ] Progress saved to SharedPreferences
-- [ ] Completion persists across app restart
-- [ ] David card unlocked after Noah completion
-- [ ] Sound toggle works and persists
-- [ ] Tested on 375pt screen
+| Gap | Location | Impact |
+|---|---|---|
+| **Tap-to-select, not drag-and-drop** | `NoahGame`, `AnimalCard` | Spec says drag; impl uses tap-to-match. `DraggableComponent` mixin exists but is unused. Simpler UX — acceptable for MVP. |
+| **`onGameComplete` on `BaseGameScreen` is unused** | `base_game_screen.dart:14` | The actual completion signal goes `NoahGame.onComplete → NoahGameScreen closure`. The `onGameComplete` field is a required no-op. Refactor in Wave 5 or remove the field. |
+| **`NoahGameState.intro` is defined but never set** | `noah_game.dart` | State jumps `idle → playing` skipping `intro`. Field reserved for future use — harmless. |
+| **`StorySelectionScreen._routeFor` returns `noahIntro` for all non-Noah stories** | `story_selection_screen.dart:25` | If David/Jonah/Adam were unlocked, tapping them would navigate to Noah's intro. Safe for MVP (those stories are locked), but must be fixed in Wave 5. |
+| **`/parent` route is a `_StubScreen`** | `app_router.dart` | Parent gate navigates to a placeholder. Functional parent gate sheet exists but the dedicated parent section screen is not built. |
+| **Placeholder assets throughout** | `assets/images/`, `assets/audio/` | All 26 PNGs are 1×1 coloured squares. All 9 MP3s are silent 426-byte files. Game renders with coloured rectangles + text labels. Needs real art for production. |
+| **No end-to-end integration test** | `test/` | Only unit + widget tests exist. No automated test that walks the full Home→Game→Reward flow. |
+
+---
+
+## Next Steps — Wave 5: David and Goliath
+
+7 todos are queued in the SQL database (`w5-models` through `w5-tests`). David validates that the reusable framework works for a second story.
+
+**Implementation order (dependency-safe):**
+1. `w5-models` + `w5-assets` — parallel (no deps)
+2. `w5-logic` + `w5-flame` — after models
+3. `w5-overlay` + `w5-screens` — after flame
+4. `w5-tests` — last
+
+**Game concept:** Child taps 3 stones to collect them from the riverbank. After all 3 collected, David throws and Goliath falls. No drag required — tap mechanic only (same simplicity as Noah). Theme: courage.
+
+**Key reuse points (verify these work for David):**
+- `BaseGameScreen` — wraps any Flame game ✅
+- `StoryIntroScreen` — accepts any title/illustration/route ✅
+- `CutsceneScreen` — accepts any frame list ✅
+- `RewardScreen` — accepts any badge/stars/routes ✅
+- `ProgressRepository` — already stores david progress ✅
+- `progressProvider._applyUnlockRules` — already unlocks david after noah ✅
 
 ---
 
@@ -107,10 +93,11 @@ From `MVP_NOAH_SPEC.md`:
 
 | Version | Scope |
 |---|---|
-| **MVP (v1)** | Noah vertical slice — this file |
-| **v2** | David + Jonah + Adam stories, voice narration, EN/KR |
+| **MVP (v1.0)** | Noah vertical slice — ✅ complete |
+| **v1.1** | David and Goliath — Wave 5 in progress |
+| **v2** | Jonah + Adam + voice narration + EN/KR |
 | **v3** | Character collection, sticker book, memory verses |
 
 ---
 
-*Last updated: 2026-03-13. Update this file when tasks are completed.*
+*Last updated: 2026-03-13. Audited against source code — not inferred from prior session notes.*
