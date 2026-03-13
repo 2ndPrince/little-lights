@@ -17,41 +17,42 @@
 
 ---
 
-## Current Phase: Wave 3 Complete → Integration Sprint
+## Current Phase: ✅ MVP Complete — All 44 todos done
 
 ### ✅ Phase 0 — Foundation (DONE)
 - [x] Project folder structure + all 6 doc files
 
 ### ✅ Wave 1 — Core models & pubspec (DONE)
-- [x] `pubspec.yaml` — all 6 deps, 7 asset dirs
-- [x] `GameResult`, `AnimalPair`, `NoahContent`
+- [x] `pubspec.yaml`, `GameResult`, `AnimalPair`, `NoahContent`
 
 ### ✅ Wave 2 — Data layer + game engine core (DONE)
-- [x] App theme (AppColors, AppSizes, AppTextStyles, AppTheme)
-- [x] `go_router` — 8 routes with AppRoutes constants
-- [x] `main.dart` — async bootstrap with SharedPreferences + ProviderScope
-- [x] `BaseGameScreen` — Flutter↔Flame bridge
-- [x] `AudioService` + `AudioManager` + `audioProvider`
-- [x] `DraggableComponent` mixin
-- [x] `MatchingLogic`, `ArkDropZone`
-- [x] `ProgressRepository` + `progressProvider` + `sharedPreferencesProvider`
-- [x] `stories_registry.dart`, `asset_paths.dart`
-- [x] Test helpers (`MockProgressRepository`, `makeTestContainer`)
+- [x] App theme, go_router, main.dart, BaseGameScreen, AudioService, DraggableComponent
+- [x] MatchingLogic, ArkDropZone, ProgressRepository, progressProvider, asset_paths.dart
 
 ### ✅ Wave 3 — Flutter screens + Noah game + assets (DONE)
-- [x] `HomeScreen` — Play button, gear icon, BGM on load
-- [x] `StorySelectionScreen` + `StoryCard` (locked/unlocked/completed)
-- [x] `StoryIntroScreen` (reusable) + `NoahStoryIntroScreen`
-- [x] `CutsceneScreen` — frame sequence, tap-to-skip, Timer dispose
-- [x] `RewardScreen` — ScaleTransition star + SlideTransition badge
-- [x] `SettingsScreen` — sound toggle
-- [x] `ParentGateSheet` — 2-second hold-to-unlock, reset progress
-- [x] `AnimalCard` — tap-to-select, shake/bounce feedback
-- [x] `NoahGame` — full state machine
-- [x] `NoahWorld` — 6-card grid + ArkDropZone layout
-- [x] 26 placeholder PNGs + 9 silent audio files + font
-- [x] 17 unit tests passing (matching logic + repository)
-- [x] `.gitignore` added
+- [x] HomeScreen, StorySelectionScreen, StoryIntroScreen, CutsceneScreen, RewardScreen
+- [x] SettingsScreen, ParentGateSheet, AnimalCard, NoahGame, NoahWorld
+- [x] 26 placeholder PNGs, 9 silent audio files, font
+
+### ✅ Wave 4 — Integration + tests (DONE)
+- [x] NoahGameScreen: wires NoahGame → progress save → cutscene route
+- [x] NoahIntroOverlay: Flame overlay with Start button (160×80)
+- [x] BaseGameScreen: optional overlayBuilderMap support
+- [x] 8 provider tests (unlock chain, markComplete, resetAll)
+- [x] 7 widget tests (StoryCard states, RewardScreen nav)
+- [x] **32/32 tests passing, 0 analyzer errors**
+- [x] Full flow verified on Chrome: Home→Select→Intro→Game→Cutscene→Reward
+
+### 🏁 MVP Definition of Done — Status
+- [x] App launches to HomeScreen
+- [x] Child reaches game in 3 taps (Home Play → Noah card → Start)
+- [x] All 3 animal pairs matchable and loadable
+- [x] Cutscene plays (4 frames, tap-to-skip)
+- [x] Star + badge reward screen with animation
+- [x] Progress saved to SharedPreferences on completion
+- [x] David card unlocks after Noah completion (linear unlock rule)
+- [x] Sound toggle works and persists
+- [x] All code on GitHub: https://github.com/2ndPrince/little-lights
 
 ---
 

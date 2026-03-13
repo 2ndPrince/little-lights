@@ -46,6 +46,34 @@ These rules apply to every file in this project. Follow them strictly.
 
 ---
 
+## Project Tooling
+
+| Tool | Purpose |
+|---|---|
+| `flutter analyze` | Static analysis — run before every commit, fix all warnings in scope |
+| `flutter test` | Unit + widget tests — must stay green; run after every change |
+| Dart MCP server | Code intelligence — use to inspect structure and symbols before editing |
+| Widget tests | All new widgets need at least a smoke test |
+
+---
+
+## Agent Rules (apply to every implementation task)
+
+### Before writing any code
+1. **Inspect project structure via MCP** — understand what already exists
+2. **Identify the existing architecture pattern** for the area you are touching
+3. **Follow the same state management approach** — Riverpod providers, not setState in feature screens
+4. **Follow the same widget composition style** — extract private `_SubWidget` classes, keep `build()` under 50 lines
+5. **Do not introduce new architecture patterns** — if unsure, match the closest existing file
+
+### Before finishing any task
+- Run `flutter analyze` — fix all warnings that are in scope (not pre-existing deprecations)
+- Run `flutter test` — all tests must pass
+- Check for unnecessary widget rebuilds — use `const` constructors and avoid rebuilding parent widgets when only a child needs to update
+- Check null safety — no `!` force-unwraps without a guard, no `dynamic` types
+
+---
+
 ## Architecture Rules
 
 ### Layer boundaries — never cross these
