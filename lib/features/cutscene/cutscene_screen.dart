@@ -24,7 +24,7 @@ class CutsceneScreen extends StatefulWidget {
   const CutsceneScreen({
     super.key,
     required this.framePaths,
-    this.frameDuration = const Duration(milliseconds: 600),
+    this.frameDuration = const Duration(seconds: 2),
     required this.nextRoute,
   });
 
