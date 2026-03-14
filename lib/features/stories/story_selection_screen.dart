@@ -23,8 +23,10 @@ class StorySelectionScreen extends ConsumerWidget {
         return AppRoutes.noahIntro;
       case StoryId.david:
         return AppRoutes.davidIntro;
-      default:
-        return AppRoutes.stories; // locked stories do not navigate
+      case StoryId.jonah:
+        return AppRoutes.jonahIntro;
+      case StoryId.adam:
+        return AppRoutes.adamIntro;
     }
   }
 

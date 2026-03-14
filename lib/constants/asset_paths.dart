@@ -112,4 +112,53 @@ abstract final class AssetPaths {
   static const String flameDavidStone2     = 'stories/david/ui/stone_2.png';
   static const String flameDavidStone3     = 'stories/david/ui/stone_3.png';
   static const String flameBgmDavid        = 'music/bgm_david.mp3';
+
+  // ── Jonah — Flutter paths (full) ────────────────────────────────────────
+
+  static const String jonahBgOcean  = 'assets/images/stories/jonah/background/background_ocean.png';
+  static const String jonahBadge    = 'assets/images/stories/jonah/ui/badge_jonah.png';
+  static const String jonahScene01  = 'assets/images/stories/jonah/cutscene/scene_01.png';
+  static const String jonahScene02  = 'assets/images/stories/jonah/cutscene/scene_02.png';
+  static const String jonahScene03  = 'assets/images/stories/jonah/cutscene/scene_03.png';
+  static const String jonahScene04  = 'assets/images/stories/jonah/cutscene/scene_04.png';
+
+  /// Ordered list of Jonah cutscene frames for [CutscenePlayer].
+  static const List<String> jonahCutsceneFrames = [
+    jonahScene01, jonahScene02, jonahScene03, jonahScene04,
+  ];
+
+  // ── Jonah — Flame paths (relative to assets/images/) ────────────────────
+
+  static const String flameJonahBgOcean = 'stories/jonah/background/background_ocean.png';
+  static const String flameJonahCloud1  = 'stories/jonah/ui/cloud_1.png';
+  static const String flameJonahCloud2  = 'stories/jonah/ui/cloud_2.png';
+  static const String flameJonahCloud3  = 'stories/jonah/ui/cloud_3.png';
+  static const String flameJonahBoat    = 'stories/jonah/characters/jonah_boat.png';
+  /// Reuses Noah BGM as a placeholder until a dedicated Jonah track is recorded.
+  static const String flameBgmJonah     = 'music/bgm_noah.mp3';
+
+  // ── Adam — Flutter paths (full) ─────────────────────────────────────────
+
+  static const String adamBgGarden = 'assets/images/stories/adam/background/background_garden.png';
+  static const String adamBadge    = 'assets/images/stories/adam/ui/badge_adam.png';
+  static const String adamScene01  = 'assets/images/stories/adam/cutscene/scene_01.png';
+  static const String adamScene02  = 'assets/images/stories/adam/cutscene/scene_02.png';
+  static const String adamScene03  = 'assets/images/stories/adam/cutscene/scene_03.png';
+  static const String adamScene04  = 'assets/images/stories/adam/cutscene/scene_04.png';
+
+  /// Ordered list of Adam cutscene frames for [CutscenePlayer].
+  static const List<String> adamCutsceneFrames = [
+    adamScene01, adamScene02, adamScene03, adamScene04,
+  ];
+
+  // ── Adam — Flame paths (relative to assets/images/) ─────────────────────
+
+  static const String flameAdamBgGarden   = 'stories/adam/background/background_garden.png';
+  static const String flameAdamLion       = 'stories/adam/animals/adam_lion.png';
+  static const String flameAdamElephant   = 'stories/adam/animals/adam_elephant.png';
+  static const String flameAdamGiraffe    = 'stories/adam/animals/adam_giraffe.png';
+  static const String flameAdamBird       = 'stories/adam/animals/adam_bird.png';
+  static const String flameAdamCharacter  = 'stories/adam/characters/adam_character.png';
+  /// Reuses home BGM as a placeholder until a dedicated Adam track is recorded.
+  static const String flameBgmAdam        = 'music/bgm_home.mp3';
 }

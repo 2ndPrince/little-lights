@@ -38,6 +38,15 @@ flutter:
     - assets/images/stories/david/characters/
     - assets/images/stories/david/ui/
     - assets/images/stories/david/cutscene/
+    - assets/images/stories/jonah/background/
+    - assets/images/stories/jonah/characters/
+    - assets/images/stories/jonah/ui/
+    - assets/images/stories/jonah/cutscene/
+    - assets/images/stories/adam/background/
+    - assets/images/stories/adam/characters/
+    - assets/images/stories/adam/animals/
+    - assets/images/stories/adam/ui/
+    - assets/images/stories/adam/cutscene/
     - assets/audio/music/
     - assets/audio/sfx/
 

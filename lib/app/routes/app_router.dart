@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../constants/asset_paths.dart';
+import '../../features/adam/adam_game_screen.dart';
+import '../../features/adam/adam_story_intro_screen.dart';
 import '../../features/cutscene/cutscene_screen.dart';
 import '../../features/david/david_game_screen.dart';
 import '../../features/david/david_story_intro_screen.dart';
 import '../../features/home/home_screen.dart';
+import '../../features/jonah/jonah_game_screen.dart';
+import '../../features/jonah/jonah_story_intro_screen.dart';
 import '../../features/noah/noah_game_screen.dart';
 import '../../features/noah/noah_story_intro_screen.dart';
 import '../../features/rewards/reward_screen.dart';
@@ -23,6 +27,14 @@ abstract final class AppRoutes {
   static const String davidGame      = '/stories/david/game';
   static const String davidCutscene  = '/stories/david/cutscene';
   static const String davidReward    = '/stories/david/reward';
+  static const String jonahIntro     = '/stories/jonah/intro';
+  static const String jonahGame      = '/stories/jonah/game';
+  static const String jonahCutscene  = '/stories/jonah/cutscene';
+  static const String jonahReward    = '/stories/jonah/reward';
+  static const String adamIntro      = '/stories/adam/intro';
+  static const String adamGame       = '/stories/adam/game';
+  static const String adamCutscene   = '/stories/adam/cutscene';
+  static const String adamReward     = '/stories/adam/reward';
   static const String settings       = '/settings';
   static const String parent         = '/parent';
 }
@@ -86,6 +98,56 @@ final GoRouter appRouter = GoRouter(
         badgeAssetPath: AssetPaths.davidBadge,
         storyTitle: 'David and Goliath',
         replayRoute: AppRoutes.davidIntro,
+        doneRoute: AppRoutes.stories,
+      ),
+    ),
+    GoRoute(
+      path: AppRoutes.jonahIntro,
+      builder: (context, state) => const JonahStoryIntroScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.jonahGame,
+      builder: (context, state) => const JonahGameScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.jonahCutscene,
+      builder: (context, state) => CutsceneScreen(
+        framePaths: AssetPaths.jonahCutsceneFrames,
+        nextRoute: AppRoutes.jonahReward,
+      ),
+    ),
+    GoRoute(
+      path: AppRoutes.jonahReward,
+      builder: (context, state) => RewardScreen(
+        stars: 1,
+        badgeAssetPath: AssetPaths.jonahBadge,
+        storyTitle: 'Jonah and the Whale',
+        replayRoute: AppRoutes.jonahIntro,
+        doneRoute: AppRoutes.stories,
+      ),
+    ),
+    GoRoute(
+      path: AppRoutes.adamIntro,
+      builder: (context, state) => const AdamStoryIntroScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.adamGame,
+      builder: (context, state) => const AdamGameScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.adamCutscene,
+      builder: (context, state) => CutsceneScreen(
+        framePaths: AssetPaths.adamCutsceneFrames,
+        nextRoute: AppRoutes.adamReward,
+      ),
+    ),
+    GoRoute(
+      path: AppRoutes.adamReward,
+      builder: (context, state) => RewardScreen(
+        stars: 1,
+        badgeAssetPath: AssetPaths.adamBadge,
+        storyTitle: 'Adam and Eve',
+        replayRoute: AppRoutes.adamIntro,
         doneRoute: AppRoutes.stories,
       ),
     ),
