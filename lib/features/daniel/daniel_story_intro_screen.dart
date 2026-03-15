@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/routes/app_router.dart';
 import '../../constants/asset_paths.dart';
 import '../stories/story_intro_screen.dart';
 
@@ -14,7 +13,7 @@ class DanielStoryIntroScreen extends StatelessWidget {
       title: 'Daniel and the Lions',
       illustrationAssetPath: AssetPaths.danielBgCave,
       introSentence: 'Help Daniel stay brave with the lions!',
-      startRoute: AppRoutes.danielGame,
+      startRoute: '/puzzle/daniel',
     );
   }
 }

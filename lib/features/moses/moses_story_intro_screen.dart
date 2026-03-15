@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/routes/app_router.dart';
 import '../../constants/asset_paths.dart';
 import '../stories/story_intro_screen.dart';
 
@@ -14,7 +13,7 @@ class MosesStoryIntroScreen extends StatelessWidget {
       title: 'Moses and the Red Sea',
       illustrationAssetPath: AssetPaths.mosesBgDesert,
       introSentence: 'Help Moses part the Red Sea!',
-      startRoute: AppRoutes.mosesGame,
+      startRoute: '/puzzle/moses',
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/routes/app_router.dart';
 import '../../constants/asset_paths.dart';
 import '../stories/story_intro_screen.dart';
 
@@ -16,7 +15,7 @@ class NoahStoryIntroScreen extends StatelessWidget {
       title: "Noah's Ark",
       illustrationAssetPath: AssetPaths.noahBgSky,
       introSentence: 'Help Noah bring the animals into the ark.',
-      startRoute: AppRoutes.noahGame,
+      startRoute: '/puzzle/noah',
     );
   }
 }

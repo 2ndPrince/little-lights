@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/routes/app_router.dart';
 import '../../constants/asset_paths.dart';
 import '../stories/story_intro_screen.dart';
 
@@ -16,7 +15,7 @@ class SamaritanStoryIntroScreen extends StatelessWidget {
       title: 'The Good Samaritan',
       illustrationAssetPath: AssetPaths.samaritanBgRoad,
       introSentence: 'Help the Good Samaritan heal the wounded man!',
-      startRoute: AppRoutes.samaritanGame,
+      startRoute: '/puzzle/samaritan',
     );
   }
 }

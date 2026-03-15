@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/routes/app_router.dart';
 import '../../constants/asset_paths.dart';
 import '../stories/story_intro_screen.dart';
 
@@ -16,7 +15,7 @@ class CreationStoryIntroScreen extends StatelessWidget {
       title: 'Creation',
       illustrationAssetPath: AssetPaths.creationBgVoid,
       introSentence: 'Tap each day of creation in order!',
-      startRoute: AppRoutes.creationGame,
+      startRoute: '/puzzle/creation',
     );
   }
 }

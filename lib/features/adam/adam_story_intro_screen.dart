@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/routes/app_router.dart';
 import '../../constants/asset_paths.dart';
 import '../stories/story_intro_screen.dart';
 
@@ -16,7 +15,7 @@ class AdamStoryIntroScreen extends StatelessWidget {
       title: 'Adam and Eve',
       illustrationAssetPath: AssetPaths.adamBgGarden,
       introSentence: 'Help Adam name all the animals in the garden.',
-      startRoute: AppRoutes.adamGame,
+      startRoute: '/puzzle/adam',
     );
   }
 }

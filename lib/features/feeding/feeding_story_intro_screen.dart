@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/routes/app_router.dart';
 import '../../constants/asset_paths.dart';
 import '../stories/story_intro_screen.dart';
 
@@ -16,7 +15,7 @@ class FeedingStoryIntroScreen extends StatelessWidget {
       title: 'Feeding the 5,000',
       illustrationAssetPath: AssetPaths.feedingBgHillside,
       introSentence: 'Help share the loaves and fish with everyone!',
-      startRoute: AppRoutes.feedingGame,
+      startRoute: '/puzzle/feeding',
     );
   }
 }

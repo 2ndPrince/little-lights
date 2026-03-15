@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/routes/app_router.dart';
 import '../../constants/asset_paths.dart';
 import '../stories/story_intro_screen.dart';
 
@@ -16,7 +15,7 @@ class ZacchaeusStoryIntroScreen extends StatelessWidget {
       title: 'Zacchaeus',
       illustrationAssetPath: AssetPaths.zacchaeusBackground,
       introSentence: 'Help Zacchaeus climb down to meet Jesus!',
-      startRoute: AppRoutes.zacchaeusGame,
+      startRoute: '/puzzle/zacchaeus',
     );
   }
 }

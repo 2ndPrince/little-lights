@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/routes/app_router.dart';
 import '../../constants/asset_paths.dart';
 import '../stories/story_intro_screen.dart';
 
@@ -16,7 +15,7 @@ class JonahStoryIntroScreen extends StatelessWidget {
       title: 'Jonah and the Whale',
       illustrationAssetPath: AssetPaths.jonahBgOcean,
       introSentence: 'Help Jonah obey God and calm the storm.',
-      startRoute: AppRoutes.jonahGame,
+      startRoute: '/puzzle/jonah',
     );
   }
 }
