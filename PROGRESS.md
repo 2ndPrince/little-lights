@@ -93,35 +93,42 @@ All 44 Noah MVP todos are done. The following was **verified by reading source c
 
 | Version | Scope | Status |
 |---|---|---|
-| **v1.0** | Noah's Ark | ✅ Complete |
+| **v1.0** | Noah's Ark (MVP) | ✅ Complete |
 | **v1.1** | David & Goliath | ✅ Complete |
 | **v1.2** | Jonah + Adam & Eve + TestFlight | ✅ Live (build 2, Mar 2026) |
-| **v1.3** | Moses, Daniel, Good Samaritan | 🔜 Wave 6 |
-| **v1.4** | Zacchaeus, Feeding 5,000, Creation | 🔜 Wave 6 |
-| **v2** | Voice narration (EN/KR) + parent progress screen | Backlog |
-| **v3** | Character collection, sticker book, memory verses | Backlog |
+| **v1.3** | Wave 6 — 6 new mini-game stories built | ✅ Committed (superseded) |
+| **v2.0** | Wave 7 — unified puzzle mechanic, chronological order, all 10 stories | 🔜 Active |
+| **v3** | Voice narration (EN/KR) + parent progress screen | Backlog |
+| **v4** | Character collection, sticker book, memory verses | Backlog |
 
 ---
 
-## 🔜 Wave 6 — 6 New Stories
+## 🔜 Wave 7 — Unified Puzzle Mechanic (ACTIVE)
 
-### Story designs (see plan.md for full details)
+### Summary of pivot
+- All 10 stories use **one universal jigsaw puzzle** (12 pieces, 3×4 grid)
+- Stories ordered **chronologically** (Creation first → Zacchaeus last)
+- Puzzle image = `scene_01`, Lesson slides = `scene_02–04` (reuse all existing assets)
+- New screens: `PuzzleGameScreen` (universal), `LessonScreen` (new — replaces cutscene)
+- Old story-specific mini-game code (`lib/game/noah/`, `lib/game/david/`, etc.) will be deleted in cleanup phase
 
-| # | Story | Mechanic | New technique |
+### Story order (chronological) and asset status
+
+| # | StoryId | Story | Real assets? |
 |---|---|---|---|
-| 5 | Moses & the Red Sea | Swipe water walls apart | First **swipe gesture** in app |
-| 6 | Daniel & the Lions | Tap each lion to feed it | Tap + state change (growl → calm) |
-| 7 | Good Samaritan | Drag 3 items onto wounded man | Multi-item positional drag |
-| 8 | Zacchaeus | Tap branches top→bottom in order | **Sequential ordered** tap |
-| 9 | Feeding the 5,000 | Drag loaves & fish into baskets | Drag with fill/overflow animation |
-| 10 | Creation | Tap element → place in day slot | Sorting/matching sequence |
+| 1 | `creation` | Creation | ❌ placeholders (regen needed) |
+| 2 | `adam` | Adam & Eve | ✅ real |
+| 3 | `noah` | Noah's Ark | ✅ real |
+| 4 | `moses` | Moses & the Red Sea | ❌ placeholders |
+| 5 | `david` | David & Goliath | ✅ real |
+| 6 | `jonah` | Jonah | ✅ real |
+| 7 | `daniel` | Daniel & the Lions | ❌ placeholders |
+| 8 | `samaritan` | Good Samaritan | ❌ placeholders |
+| 9 | `feeding` | Feeding the 5,000 | ❌ placeholders |
+| 10 | `zacchaeus` | Zacchaeus | ❌ placeholders |
 
-### Implementation notes
-- Extend `StoryId` enum: `moses`, `daniel`, `samaritan`, `zacchaeus`, `feeding`, `creation`
-- Add 4 routes per story to `app_router.dart` (24 new routes total)
-- Add constants to `asset_paths.dart`
-- All screens reuse `BaseGameScreen`, `StoryIntroScreen`, `CutsceneScreen`, `RewardScreen`
-- Total new assets: ~60 images (generate with Gemini AI)
-- Moses swipe mechanic needs a new `DragComponent` or gesture detector in Flame
+### Execution plan
+See **`WAVE7_EXECUTION.md`** for agent-ready prompts with approval gates.
+Phase 0 (infrastructure) must run first. Then one story at a time with approval gates.
 
 ---
