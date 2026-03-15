@@ -27,15 +27,15 @@ void main() {
   });
 
   group('loadProgress with no saved data', () {
-    test('noah defaults to unlocked, not completed, 0 stars', () async {
-      final progress = await repo.loadProgress(StoryId.noah);
+    test('creation defaults to unlocked, not completed, 0 stars', () async {
+      final progress = await repo.loadProgress(StoryId.creation);
 
       expect(progress.isUnlocked, isTrue);
       expect(progress.isCompleted, isFalse);
       expect(progress.starsEarned, equals(0));
     });
 
-    test('non-noah story defaults to locked, not completed, 0 stars', () async {
+    test('non-creation story defaults to locked, not completed, 0 stars', () async {
       // Start with a fresh repo seeded without david progress
       final freshRepo = MockProgressRepository();
       await freshRepo.resetAll();

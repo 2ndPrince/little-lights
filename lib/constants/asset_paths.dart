@@ -339,4 +339,17 @@ abstract final class AssetPaths {
   static const String flameCreationAnimals  = 'stories/creation/ui/element_animals.png';
   /// Reuses home BGM as a placeholder until a dedicated Creation track is recorded.
   static const String flameBgmCreation      = 'music/bgm_home.mp3';
+
+  // ── Puzzle — Flame paths for scene_01 (puzzle image per story) ──────────
+
+  static const String flameCreationScene01  = 'stories/creation/cutscene/scene_01.png';
+  static const String flameAdamScene01      = 'stories/adam/cutscene/scene_01.png';
+  static const String flameNoahScene01      = 'stories/noah/cutscene/scene_01.png';
+  static const String flameMosesScene01     = 'stories/moses/cutscene/scene_01.png';
+  static const String flameDavidScene01     = 'stories/david/cutscene/scene_01.png';
+  static const String flameJonahScene01     = 'stories/jonah/cutscene/scene_01.png';
+  static const String flameDanielScene01    = 'stories/daniel/cutscene/scene_01.png';
+  static const String flameSamaritanScene01 = 'stories/samaritan/cutscene/scene_01.png';
+  static const String flameFeedingScene01   = 'stories/feeding/cutscene/scene_01.png';
+  static const String flameZacchaeusScene01 = 'stories/zacchaeus/cutscene/scene_01.png';
 }

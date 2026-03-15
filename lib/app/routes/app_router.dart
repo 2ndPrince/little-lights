@@ -15,10 +15,12 @@ import '../../features/feeding/feeding_story_intro_screen.dart';
 import '../../features/home/home_screen.dart';
 import '../../features/jonah/jonah_game_screen.dart';
 import '../../features/jonah/jonah_story_intro_screen.dart';
+import '../../features/lesson/lesson_screen.dart';
 import '../../features/moses/moses_game_screen.dart';
 import '../../features/moses/moses_story_intro_screen.dart';
 import '../../features/noah/noah_game_screen.dart';
 import '../../features/noah/noah_story_intro_screen.dart';
+import '../../features/puzzle/puzzle_game_screen.dart';
 import '../../features/rewards/reward_screen.dart';
 import '../../features/samaritan/samaritan_game_screen.dart';
 import '../../features/samaritan/samaritan_story_intro_screen.dart';
@@ -26,6 +28,7 @@ import '../../features/settings/settings_screen.dart';
 import '../../features/stories/story_selection_screen.dart';
 import '../../features/zacchaeus/zacchaeus_game_screen.dart';
 import '../../features/zacchaeus/zacchaeus_story_intro_screen.dart';
+import '../../data/models/story.dart';
 
 /// All app route paths as constants.
 abstract final class AppRoutes {
@@ -344,6 +347,25 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.parent,
       builder: (context, state) => const _StubScreen(title: 'Parent Section'),
+    ),
+    // ── Universal puzzle & lesson routes (Wave 7) ──────────────────────────
+    GoRoute(
+      path: '/puzzle/:storyId',
+      builder: (context, state) {
+        final id = StoryId.values.firstWhere(
+          (e) => e.name == state.pathParameters['storyId'],
+        );
+        return PuzzleGameScreen(storyId: id);
+      },
+    ),
+    GoRoute(
+      path: '/lesson/:storyId',
+      builder: (context, state) {
+        final id = StoryId.values.firstWhere(
+          (e) => e.name == state.pathParameters['storyId'],
+        );
+        return LessonScreen(storyId: id);
+      },
     ),
   ],
 );

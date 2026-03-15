@@ -13,7 +13,8 @@ enum StoryTheme {
 }
 
 /// Identifies each story in the app.
-enum StoryId { noah, david, jonah, adam, moses, daniel, samaritan, zacchaeus, feeding, creation }
+/// Order is chronological — used for linear unlock sequencing.
+enum StoryId { creation, adam, noah, moses, david, jonah, daniel, samaritan, feeding, zacchaeus }
 
 /// Metadata for a single Bible story.
 class Story extends Equatable {

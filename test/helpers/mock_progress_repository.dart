@@ -6,10 +6,10 @@ import 'package:little_lights/data/repositories/local/progress_repository.dart';
 /// Never touches SharedPreferences.
 class MockProgressRepository implements IProgressRepository {
   final Map<StoryId, StoryProgress> _progress = {
-    StoryId.noah:  StoryProgress(storyId: StoryId.noah,  isUnlocked: true),
-    StoryId.david: StoryProgress(storyId: StoryId.david, isUnlocked: false),
-    StoryId.jonah: StoryProgress(storyId: StoryId.jonah, isUnlocked: false),
-    StoryId.adam:  StoryProgress(storyId: StoryId.adam,  isUnlocked: false),
+    StoryId.creation: StoryProgress(storyId: StoryId.creation, isUnlocked: true),
+    StoryId.adam:     StoryProgress(storyId: StoryId.adam,     isUnlocked: false),
+    StoryId.noah:     StoryProgress(storyId: StoryId.noah,     isUnlocked: false),
+    StoryId.moses:    StoryProgress(storyId: StoryId.moses,    isUnlocked: false),
   };
 
   bool _soundEnabled = true;
@@ -22,7 +22,7 @@ class MockProgressRepository implements IProgressRepository {
   @override
   Future<StoryProgress> loadProgress(StoryId storyId) async =>
       _progress[storyId] ??
-      StoryProgress(storyId: storyId, isUnlocked: storyId == StoryId.noah);
+      StoryProgress(storyId: storyId, isUnlocked: storyId == StoryId.creation);
 
   @override
   Future<void> saveProgress(StoryProgress progress) async {
@@ -34,7 +34,7 @@ class MockProgressRepository implements IProgressRepository {
     for (final id in StoryId.values) {
       _progress[id] = StoryProgress(
         storyId: id,
-        isUnlocked: id == StoryId.noah,
+        isUnlocked: id == StoryId.creation,
       );
     }
     _soundEnabled = true;

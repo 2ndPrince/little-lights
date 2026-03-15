@@ -19,35 +19,35 @@ Future<ProviderContainer> _makeSettledContainer({
 
 void main() {
   group('progressProvider', () {
-    test('initial state has noah unlocked, others locked', () async {
+    test('initial state has creation unlocked, others locked', () async {
       final container = await _makeSettledContainer();
       addTearDown(container.dispose);
 
       final state = container.read(progressProvider);
-      expect(state[StoryId.noah]!.isUnlocked, isTrue);
-      expect(state[StoryId.david]!.isUnlocked, isFalse);
-      expect(state[StoryId.jonah]!.isUnlocked, isFalse);
+      expect(state[StoryId.creation]!.isUnlocked, isTrue);
       expect(state[StoryId.adam]!.isUnlocked, isFalse);
+      expect(state[StoryId.noah]!.isUnlocked, isFalse);
+      expect(state[StoryId.moses]!.isUnlocked, isFalse);
     });
 
     test('markComplete unlocks the next story', () async {
       final container = await _makeSettledContainer();
       addTearDown(container.dispose);
 
-      await container.read(progressProvider.notifier).markComplete(StoryId.noah);
+      await container.read(progressProvider.notifier).markComplete(StoryId.creation);
 
       final state = container.read(progressProvider);
-      expect(state[StoryId.david]!.isUnlocked, isTrue);
+      expect(state[StoryId.adam]!.isUnlocked, isTrue);
     });
 
     test('markComplete does NOT skip stories', () async {
       final container = await _makeSettledContainer();
       addTearDown(container.dispose);
 
-      await container.read(progressProvider.notifier).markComplete(StoryId.noah);
+      await container.read(progressProvider.notifier).markComplete(StoryId.creation);
 
       final state = container.read(progressProvider);
-      expect(state[StoryId.jonah]!.isUnlocked, isFalse);
+      expect(state[StoryId.noah]!.isUnlocked, isFalse);
     });
 
     test('markComplete updates stars on the completed story', () async {
@@ -56,10 +56,10 @@ void main() {
 
       await container
           .read(progressProvider.notifier)
-          .markComplete(StoryId.noah, stars: 1);
+          .markComplete(StoryId.creation, stars: 1);
 
       final state = container.read(progressProvider);
-      expect(state[StoryId.noah]!.starsEarned, equals(1));
+      expect(state[StoryId.creation]!.starsEarned, equals(1));
     });
 
     test('resetAll returns everything to defaults', () async {
@@ -67,39 +67,39 @@ void main() {
       addTearDown(container.dispose);
 
       final notifier = container.read(progressProvider.notifier);
-      await notifier.markComplete(StoryId.noah);
+      await notifier.markComplete(StoryId.creation);
       await notifier.resetAll();
       // let _loadAll inside resetAll complete
       await Future<void>.delayed(Duration.zero);
 
       final state = container.read(progressProvider);
-      expect(state[StoryId.noah]!.isUnlocked, isTrue);
-      expect(state[StoryId.noah]!.isCompleted, isFalse);
-      expect(state[StoryId.david]!.isUnlocked, isFalse);
-      expect(state[StoryId.jonah]!.isUnlocked, isFalse);
+      expect(state[StoryId.creation]!.isUnlocked, isTrue);
+      expect(state[StoryId.creation]!.isCompleted, isFalse);
       expect(state[StoryId.adam]!.isUnlocked, isFalse);
+      expect(state[StoryId.noah]!.isUnlocked, isFalse);
+      expect(state[StoryId.moses]!.isUnlocked, isFalse);
     });
 
-    test('linear unlock chain: noah → david → jonah; adam stays locked',
+    test('linear unlock chain: creation → adam → noah; moses stays locked',
         () async {
       final container = await _makeSettledContainer();
       addTearDown(container.dispose);
 
       final notifier = container.read(progressProvider.notifier);
-      await notifier.markComplete(StoryId.noah);
-      await notifier.markComplete(StoryId.david);
+      await notifier.markComplete(StoryId.creation);
+      await notifier.markComplete(StoryId.adam);
 
       final state = container.read(progressProvider);
-      expect(state[StoryId.jonah]!.isUnlocked, isTrue);
-      expect(state[StoryId.adam]!.isUnlocked, isFalse);
+      expect(state[StoryId.noah]!.isUnlocked, isTrue);
+      expect(state[StoryId.moses]!.isUnlocked, isFalse);
     });
 
-    test('isUnlocked returns true for noah initially', () async {
+    test('isUnlocked returns true for creation initially', () async {
       final container = await _makeSettledContainer();
       addTearDown(container.dispose);
 
       final notifier = container.read(progressProvider.notifier);
-      expect(notifier.isUnlocked(StoryId.noah), isTrue);
+      expect(notifier.isUnlocked(StoryId.creation), isTrue);
     });
 
     test('isCompleted returns false initially, true after markComplete',
@@ -108,10 +108,10 @@ void main() {
       addTearDown(container.dispose);
 
       final notifier = container.read(progressProvider.notifier);
-      expect(notifier.isCompleted(StoryId.noah), isFalse);
+      expect(notifier.isCompleted(StoryId.creation), isFalse);
 
-      await notifier.markComplete(StoryId.noah);
-      expect(notifier.isCompleted(StoryId.noah), isTrue);
+      await notifier.markComplete(StoryId.creation);
+      expect(notifier.isCompleted(StoryId.creation), isTrue);
     });
   });
 }
