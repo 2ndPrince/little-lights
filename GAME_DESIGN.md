@@ -92,14 +92,20 @@ Each story has:
 3. **Cutscene** — a 10–20 second animated story moment using layered PNG animation
 4. **Reward** — 1 completion star + 1 story-specific badge
 
-### Story Roster (MVP: Noah only; full list for architecture planning)
+### Story Roster
 
-| # | Story | Theme | Mini-game Type |
-|---|---|---|---|
-| 1 | Noah's Ark | Obedience / Trust | Matching + drag-and-drop |
-| 2 | David and Goliath | Courage | Timing tap |
-| 3 | Jonah | Obedience / Second chances | Maze navigation |
-| 4 | Adam and Eve | Choice / Consequence | Picture puzzle |
+| # | Story | Theme | Mini-game Type | Status |
+|---|---|---|---|---|
+| 1 | Noah's Ark | Obedience / Trust | Tap to match animal pairs → ark | ✅ Live |
+| 2 | David and Goliath | Courage | Tap to sling stones at Goliath | ✅ Live |
+| 3 | Jonah | Obedience / Second chances | Tap storm clouds to calm the sea | ✅ Live |
+| 4 | Adam and Eve | Stewardship / Care | Tap animals to name them | ✅ Live |
+| 5 | Moses & the Red Sea | Trust / Courage | Swipe water walls apart to open a path | 🔜 Wave 6 |
+| 6 | Daniel & the Lions | Courage / Faith | Tap each lion to feed it — all fed = safe | 🔜 Wave 6 |
+| 7 | Good Samaritan | Kindness / Helping | Drag bandage, water, bread to wounded man | 🔜 Wave 6 |
+| 8 | Zacchaeus | Forgiveness / Change | Tap branches in order to climb down to Jesus | 🔜 Wave 6 |
+| 9 | Feeding the 5,000 | Generosity / Trust | Drag loaves & fish into crowd baskets | 🔜 Wave 6 |
+| 10 | Creation | Wonder / Gratitude | Tap each day's element to place it in its slot | 🔜 Wave 6 |
 
 ---
 

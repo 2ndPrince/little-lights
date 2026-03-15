@@ -1,10 +1,19 @@
 import 'package:equatable/equatable.dart';
 
 /// The moral theme of a Bible story.
-enum StoryTheme { obedience, courage, trust, forgiveness, kindness, helping }
+enum StoryTheme {
+  obedience,
+  courage,
+  trust,
+  forgiveness,
+  kindness,
+  helping,
+  generosity,
+  wonder,
+}
 
 /// Identifies each story in the app.
-enum StoryId { noah, david, jonah, adam }
+enum StoryId { noah, david, jonah, adam, moses, daniel, samaritan, zacchaeus, feeding, creation }
 
 /// Metadata for a single Bible story.
 class Story extends Equatable {

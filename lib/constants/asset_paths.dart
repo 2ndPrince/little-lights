@@ -161,4 +161,182 @@ abstract final class AssetPaths {
   static const String flameAdamCharacter  = 'stories/adam/characters/adam_character.png';
   /// Reuses home BGM as a placeholder until a dedicated Adam track is recorded.
   static const String flameBgmAdam        = 'music/bgm_home.mp3';
+
+  // ── Moses — Flutter paths (full) ────────────────────────────────────────
+
+  static const String mosesBgDesert  = 'assets/images/stories/moses/background/background_desert.png';
+  static const String mosesWallLeft  = 'assets/images/stories/moses/ui/water_wall_left.png';
+  static const String mosesWallRight = 'assets/images/stories/moses/ui/water_wall_right.png';
+  static const String mosesIsraelites = 'assets/images/stories/moses/characters/israelites.png';
+  static const String mosesBadge     = 'assets/images/stories/moses/ui/badge_moses.png';
+  static const String mosesScene01   = 'assets/images/stories/moses/cutscene/scene_01.png';
+  static const String mosesScene02   = 'assets/images/stories/moses/cutscene/scene_02.png';
+  static const String mosesScene03   = 'assets/images/stories/moses/cutscene/scene_03.png';
+  static const String mosesScene04   = 'assets/images/stories/moses/cutscene/scene_04.png';
+
+  /// Ordered list of Moses cutscene frames for [CutscenePlayer].
+  static const List<String> mosesCutsceneFrames = [
+    mosesScene01, mosesScene02, mosesScene03, mosesScene04,
+  ];
+
+  // ── Moses — Flame paths (relative to assets/images/) ────────────────────
+
+  static const String flameMosesBgDesert   = 'stories/moses/background/background_desert.png';
+  static const String flameMosesWallLeft   = 'stories/moses/ui/water_wall_left.png';
+  static const String flameMosesWallRight  = 'stories/moses/ui/water_wall_right.png';
+  static const String flameMosesIsraelites = 'stories/moses/characters/israelites.png';
+  /// Reuses Noah BGM as a placeholder until a dedicated Moses track is recorded.
+  static const String flameBgmMoses        = 'music/bgm_noah.mp3';
+
+  // ── Daniel — Flutter paths (full) ───────────────────────────────────────
+
+  static const String danielBgCave   = 'assets/images/stories/daniel/background/background_cave.png';
+  static const String danielLion1    = 'assets/images/stories/daniel/characters/lion_1.png';
+  static const String danielLion2    = 'assets/images/stories/daniel/characters/lion_2.png';
+  static const String danielLion3    = 'assets/images/stories/daniel/characters/lion_3.png';
+  static const String danielBadge    = 'assets/images/stories/daniel/ui/badge_daniel.png';
+  static const String danielScene01  = 'assets/images/stories/daniel/cutscene/scene_01.png';
+  static const String danielScene02  = 'assets/images/stories/daniel/cutscene/scene_02.png';
+  static const String danielScene03  = 'assets/images/stories/daniel/cutscene/scene_03.png';
+  static const String danielScene04  = 'assets/images/stories/daniel/cutscene/scene_04.png';
+
+  /// Ordered list of Daniel cutscene frames for [CutscenePlayer].
+  static const List<String> danielCutsceneFrames = [
+    danielScene01, danielScene02, danielScene03, danielScene04,
+  ];
+
+  // ── Daniel — Flame paths (relative to assets/images/) ───────────────────
+
+  static const String flameDanielBgCave  = 'stories/daniel/background/background_cave.png';
+  static const String flameDanielLion1   = 'stories/daniel/characters/lion_1.png';
+  static const String flameDanielLion2   = 'stories/daniel/characters/lion_2.png';
+  static const String flameDanielLion3   = 'stories/daniel/characters/lion_3.png';
+  /// Reuses David BGM as a placeholder until a dedicated Daniel track is recorded.
+  static const String flameBgmDaniel     = 'music/bgm_david.mp3';
+
+  // ── Samaritan — Flutter paths (full) ────────────────────────────────────
+
+  static const String samaritanBgRoad    = 'assets/images/stories/samaritan/background/background_road.png';
+  static const String samaritanWounded   = 'assets/images/stories/samaritan/characters/wounded_man.png';
+  static const String samaritanCharacter = 'assets/images/stories/samaritan/characters/samaritan.png';
+  static const String samaritanBandage   = 'assets/images/stories/samaritan/ui/item_bandage.png';
+  static const String samaritanWater     = 'assets/images/stories/samaritan/ui/item_water.png';
+  static const String samaritanBread     = 'assets/images/stories/samaritan/ui/item_bread.png';
+  static const String samaritanBadge     = 'assets/images/stories/samaritan/ui/badge_samaritan.png';
+  static const String samaritanScene01   = 'assets/images/stories/samaritan/cutscene/scene_01.png';
+  static const String samaritanScene02   = 'assets/images/stories/samaritan/cutscene/scene_02.png';
+  static const String samaritanScene03   = 'assets/images/stories/samaritan/cutscene/scene_03.png';
+  static const String samaritanScene04   = 'assets/images/stories/samaritan/cutscene/scene_04.png';
+
+  /// Ordered list of Samaritan cutscene frames for [CutscenePlayer].
+  static const List<String> samaritanCutsceneFrames = [
+    samaritanScene01, samaritanScene02, samaritanScene03, samaritanScene04,
+  ];
+
+  // ── Samaritan — Flame paths (relative to assets/images/) ────────────────
+
+  static const String flameSamaritanBgRoad    = 'stories/samaritan/background/background_road.png';
+  static const String flameSamaritanWounded   = 'stories/samaritan/characters/wounded_man.png';
+  static const String flameSamaritanBandage   = 'stories/samaritan/ui/item_bandage.png';
+  static const String flameSamaritanWater     = 'stories/samaritan/ui/item_water.png';
+  static const String flameSamaritanBread     = 'stories/samaritan/ui/item_bread.png';
+  /// Reuses home BGM as a placeholder until a dedicated Samaritan track is recorded.
+  static const String flameBgmSamaritan       = 'music/bgm_home.mp3';
+
+  // ── Zacchaeus — Flutter paths (full) ────────────────────────────────────
+
+  static const String zacchaeusBackground  = 'assets/images/stories/zacchaeus/background/background_street.png';
+  static const String zacchaeusCharacter   = 'assets/images/stories/zacchaeus/characters/zacchaeus.png';
+  static const String zacchaeusJesus       = 'assets/images/stories/zacchaeus/characters/jesus.png';
+  static const String zacchaesuBranch1     = 'assets/images/stories/zacchaeus/ui/branch_1.png';
+  static const String zacchaesuBranch2     = 'assets/images/stories/zacchaeus/ui/branch_2.png';
+  static const String zacchaesuBranch3     = 'assets/images/stories/zacchaeus/ui/branch_3.png';
+  static const String zacchaesuBadge       = 'assets/images/stories/zacchaeus/ui/badge_zacchaeus.png';
+  static const String zacchaeusScene01     = 'assets/images/stories/zacchaeus/cutscene/scene_01.png';
+  static const String zacchaeusScene02     = 'assets/images/stories/zacchaeus/cutscene/scene_02.png';
+  static const String zacchaeusScene03     = 'assets/images/stories/zacchaeus/cutscene/scene_03.png';
+  static const String zacchaeusScene04     = 'assets/images/stories/zacchaeus/cutscene/scene_04.png';
+
+  /// Ordered list of Zacchaeus cutscene frames for [CutscenePlayer].
+  static const List<String> zacchaesuCutsceneFrames = [
+    zacchaeusScene01, zacchaeusScene02, zacchaeusScene03, zacchaeusScene04,
+  ];
+
+  // ── Zacchaeus — Flame paths (relative to assets/images/) ────────────────
+
+  static const String flameZacchaeusBackground = 'stories/zacchaeus/background/background_street.png';
+  static const String flameZacchaeusCharacter  = 'stories/zacchaeus/characters/zacchaeus.png';
+  static const String flameZacchaesuBranch1    = 'stories/zacchaeus/ui/branch_1.png';
+  static const String flameZacchaesuBranch2    = 'stories/zacchaeus/ui/branch_2.png';
+  static const String flameZacchaesuBranch3    = 'stories/zacchaeus/ui/branch_3.png';
+  /// Reuses home BGM as a placeholder until a dedicated Zacchaeus track is recorded.
+  static const String flameBgmZacchaeus        = 'music/bgm_home.mp3';
+
+  // ── Feeding — Flutter paths (full) ──────────────────────────────────────
+
+  static const String feedingBgHillside = 'assets/images/stories/feeding/background/background_hillside.png';
+  static const String feedingBoy        = 'assets/images/stories/feeding/characters/boy.png';
+  static const String feedingLoaf1      = 'assets/images/stories/feeding/ui/loaf_1.png';
+  static const String feedingLoaf2      = 'assets/images/stories/feeding/ui/loaf_2.png';
+  static const String feedingLoaf3      = 'assets/images/stories/feeding/ui/loaf_3.png';
+  static const String feedingLoaf4      = 'assets/images/stories/feeding/ui/loaf_4.png';
+  static const String feedingLoaf5      = 'assets/images/stories/feeding/ui/loaf_5.png';
+  static const String feedingFish1      = 'assets/images/stories/feeding/ui/fish_1.png';
+  static const String feedingFish2      = 'assets/images/stories/feeding/ui/fish_2.png';
+  static const String feedingBadge      = 'assets/images/stories/feeding/ui/badge_feeding.png';
+  static const String feedingScene01    = 'assets/images/stories/feeding/cutscene/scene_01.png';
+  static const String feedingScene02    = 'assets/images/stories/feeding/cutscene/scene_02.png';
+  static const String feedingScene03    = 'assets/images/stories/feeding/cutscene/scene_03.png';
+  static const String feedingScene04    = 'assets/images/stories/feeding/cutscene/scene_04.png';
+
+  /// Ordered list of Feeding cutscene frames for [CutscenePlayer].
+  static const List<String> feedingCutsceneFrames = [
+    feedingScene01, feedingScene02, feedingScene03, feedingScene04,
+  ];
+
+  // ── Feeding — Flame paths (relative to assets/images/) ──────────────────
+
+  static const String flameFeedingBgHillside = 'stories/feeding/background/background_hillside.png';
+  static const String flameFeedingBoy        = 'stories/feeding/characters/boy.png';
+  static const String flameFeedingLoaf1      = 'stories/feeding/ui/loaf_1.png';
+  static const String flameFeedingLoaf2      = 'stories/feeding/ui/loaf_2.png';
+  static const String flameFeedingLoaf3      = 'stories/feeding/ui/loaf_3.png';
+  static const String flameFeedingLoaf4      = 'stories/feeding/ui/loaf_4.png';
+  static const String flameFeedingLoaf5      = 'stories/feeding/ui/loaf_5.png';
+  static const String flameFeedingFish1      = 'stories/feeding/ui/fish_1.png';
+  static const String flameFeedingFish2      = 'stories/feeding/ui/fish_2.png';
+  /// Reuses Noah BGM as a placeholder until a dedicated Feeding track is recorded.
+  static const String flameBgmFeeding        = 'music/bgm_noah.mp3';
+
+  // ── Creation — Flutter paths (full) ─────────────────────────────────────
+
+  static const String creationBgVoid      = 'assets/images/stories/creation/background/background_void.png';
+  static const String creationLight       = 'assets/images/stories/creation/ui/element_light.png';
+  static const String creationSky         = 'assets/images/stories/creation/ui/element_sky.png';
+  static const String creationLand        = 'assets/images/stories/creation/ui/element_land.png';
+  static const String creationStars       = 'assets/images/stories/creation/ui/element_stars.png';
+  static const String creationBirds       = 'assets/images/stories/creation/ui/element_birds.png';
+  static const String creationAnimals     = 'assets/images/stories/creation/ui/element_animals.png';
+  static const String creationBadge       = 'assets/images/stories/creation/ui/badge_creation.png';
+  static const String creationScene01     = 'assets/images/stories/creation/cutscene/scene_01.png';
+  static const String creationScene02     = 'assets/images/stories/creation/cutscene/scene_02.png';
+  static const String creationScene03     = 'assets/images/stories/creation/cutscene/scene_03.png';
+  static const String creationScene04     = 'assets/images/stories/creation/cutscene/scene_04.png';
+
+  /// Ordered list of Creation cutscene frames for [CutscenePlayer].
+  static const List<String> creationCutsceneFrames = [
+    creationScene01, creationScene02, creationScene03, creationScene04,
+  ];
+
+  // ── Creation — Flame paths (relative to assets/images/) ─────────────────
+
+  static const String flameCreationBgVoid   = 'stories/creation/background/background_void.png';
+  static const String flameCreationLight    = 'stories/creation/ui/element_light.png';
+  static const String flameCreationSky      = 'stories/creation/ui/element_sky.png';
+  static const String flameCreationLand     = 'stories/creation/ui/element_land.png';
+  static const String flameCreationStars    = 'stories/creation/ui/element_stars.png';
+  static const String flameCreationBirds    = 'stories/creation/ui/element_birds.png';
+  static const String flameCreationAnimals  = 'stories/creation/ui/element_animals.png';
+  /// Reuses home BGM as a placeholder until a dedicated Creation track is recorded.
+  static const String flameBgmCreation      = 'music/bgm_home.mp3';
 }

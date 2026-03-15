@@ -27,6 +27,18 @@ class StorySelectionScreen extends ConsumerWidget {
         return AppRoutes.jonahIntro;
       case StoryId.adam:
         return AppRoutes.adamIntro;
+      case StoryId.moses:
+        return AppRoutes.mosesIntro;
+      case StoryId.daniel:
+        return AppRoutes.danielIntro;
+      case StoryId.samaritan:
+        return AppRoutes.samaritanIntro;
+      case StoryId.zacchaeus:
+        return AppRoutes.zacchaeusIntro;
+      case StoryId.feeding:
+        return AppRoutes.feedingIntro;
+      case StoryId.creation:
+        return AppRoutes.creationIntro;
     }
   }
 

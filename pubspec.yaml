@@ -47,6 +47,29 @@ flutter:
     - assets/images/stories/adam/animals/
     - assets/images/stories/adam/ui/
     - assets/images/stories/adam/cutscene/
+    - assets/images/stories/moses/background/
+    - assets/images/stories/moses/characters/
+    - assets/images/stories/moses/ui/
+    - assets/images/stories/moses/cutscene/
+    - assets/images/stories/daniel/background/
+    - assets/images/stories/daniel/characters/
+    - assets/images/stories/daniel/ui/
+    - assets/images/stories/daniel/cutscene/
+    - assets/images/stories/samaritan/background/
+    - assets/images/stories/samaritan/characters/
+    - assets/images/stories/samaritan/ui/
+    - assets/images/stories/samaritan/cutscene/
+    - assets/images/stories/zacchaeus/background/
+    - assets/images/stories/zacchaeus/characters/
+    - assets/images/stories/zacchaeus/ui/
+    - assets/images/stories/zacchaeus/cutscene/
+    - assets/images/stories/feeding/background/
+    - assets/images/stories/feeding/characters/
+    - assets/images/stories/feeding/ui/
+    - assets/images/stories/feeding/cutscene/
+    - assets/images/stories/creation/background/
+    - assets/images/stories/creation/ui/
+    - assets/images/stories/creation/cutscene/
     - assets/audio/music/
     - assets/audio/sfx/
 

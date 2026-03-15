@@ -21,10 +21,16 @@ class ProgressNotifier extends Notifier<Map<StoryId, StoryProgress>> {
     // Initialise with defaults; load from storage asynchronously
     _loadAll();
     return {
-      StoryId.noah:  StoryProgress(storyId: StoryId.noah,  isUnlocked: true),
-      StoryId.david: StoryProgress(storyId: StoryId.david, isUnlocked: false),
-      StoryId.jonah: StoryProgress(storyId: StoryId.jonah, isUnlocked: false),
-      StoryId.adam:  StoryProgress(storyId: StoryId.adam,  isUnlocked: false),
+      StoryId.noah:       StoryProgress(storyId: StoryId.noah,       isUnlocked: true),
+      StoryId.david:      StoryProgress(storyId: StoryId.david,      isUnlocked: false),
+      StoryId.jonah:      StoryProgress(storyId: StoryId.jonah,      isUnlocked: false),
+      StoryId.adam:       StoryProgress(storyId: StoryId.adam,       isUnlocked: false),
+      StoryId.moses:      StoryProgress(storyId: StoryId.moses,      isUnlocked: false),
+      StoryId.daniel:     StoryProgress(storyId: StoryId.daniel,     isUnlocked: false),
+      StoryId.samaritan:  StoryProgress(storyId: StoryId.samaritan,  isUnlocked: false),
+      StoryId.zacchaeus:  StoryProgress(storyId: StoryId.zacchaeus,  isUnlocked: false),
+      StoryId.feeding:    StoryProgress(storyId: StoryId.feeding,    isUnlocked: false),
+      StoryId.creation:   StoryProgress(storyId: StoryId.creation,   isUnlocked: false),
     };
   }
 
